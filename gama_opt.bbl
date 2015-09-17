@@ -81,4 +81,10 @@ T.~Tommasi, F.~Orabona, and B.~Caputo, ``Safety in numbers: Learning categories
   Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on}.\hskip 1em
   plus 0.5em minus 0.4em\relax IEEE, 2010, pp. 3081--3088.
 
+\bibitem{cawley2006leave}
+G.~C. Cawley, ``Leave-one-out cross-validation based model selection criteria
+  for weighted ls-svms,'' in \emph{Neural Networks, 2006. IJCNN'06.
+  International Joint Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 2006, pp. 1661--1668.
+
 \end{thebibliography}
