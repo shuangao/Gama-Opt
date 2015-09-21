@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  17 SEP 2015 16:57
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  21 SEP 2015 16:54
 entering extended mode
 **gama_opt.tex
 (D:\LaTex_Files\Gama-Opt\gama_opt.tex
@@ -287,39 +287,74 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@ttwidth=\dimen145
 \SOUL@uldp=\dimen146
 \SOUL@ulht=\dimen147
-) (D:\LaTex_Files\Gama-Opt\gama_opt.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 364.
-LaTeX Font Info:    ... okay on input line 364.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 364.
-LaTeX Font Info:    ... okay on input line 364.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 364.
-LaTeX Font Info:    ... okay on input line 364.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 364.
-LaTeX Font Info:    ... okay on input line 364.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 364.
-LaTeX Font Info:    ... okay on input line 364.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 364.
-LaTeX Font Info:    ... okay on input line 364.
- ("D:\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+)
+\c@theorem=\count119
+
+
+! LaTeX Error: Command \theorem already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.366 \begin
+            {document}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+(D:\LaTex_Files\Gama-Opt\gama_opt.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 366.
+LaTeX Font Info:    ... okay on input line 366.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 366.
+LaTeX Font Info:    ... okay on input line 366.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 366.
+LaTeX Font Info:    ... okay on input line 366.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 366.
+LaTeX Font Info:    ... okay on input line 366.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 366.
+LaTeX Font Info:    ... okay on input line 366.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 366.
+LaTeX Font Info:    ... okay on input line 366.
+
+("D:\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count119
+\scratchcounter=\count120
 \scratchdimen=\dimen148
 \scratchbox=\box31
-\nofMPsegments=\count120
-\nofMParguments=\count121
+\nofMPsegments=\count121
+\nofMParguments=\count122
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count122
+\MPscratchCnt=\count123
 \MPscratchDim=\dimen149
-\MPnumerator=\count123
-\makeMPintoPDFobject=\count124
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
 \everyMPtoPDFconversion=\toks31
 ) (D:\LaTex_Files\Gama-Opt\gama_intro.tex)
 (D:\LaTex_Files\Gama-Opt\gama_works.tex) (D:\LaTex_Files\Gama-Opt\statement.tex
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-])
-(D:\LaTex_Files\Gama-Opt\gama_opt.bbl)
+]
+Overfull \hbox (14.10365pt too wide) detected at line 76
+[] []
+ []
+
+
+Overfull \hbox (33.72586pt too wide) detected at line 136
+[] []
+ []
+
+(D:\LaTex_Files\Gama-Opt\agl1.tex) [2] (D:\LaTex_Files\Gama-Opt\theorem.tex
+** ATTENTION: \proof is deprecated (line 4). Use \IEEEproof instead.
+
+Overfull \hbox (9.98245pt too wide) in alignment at lines 25--30
+ [][][] []
+ []
+
+)) (D:\LaTex_Files\Gama-Opt\gama_exp.tex) (D:\LaTex_Files\Gama-Opt\gama_opt.bbl
+[3])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -331,30 +366,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2] (D:\LaTex_Files\Gama-Opt\gama_opt.aux) ) 
+[4
+
+] (D:\LaTex_Files\Gama-Opt\gama_opt.aux) ) 
 Here is how much of TeX's memory you used:
- 3354 strings out of 493921
- 46242 string characters out of 3152883
- 215096 words of memory out of 3000000
- 6609 multiletter control sequences out of 15000+200000
+ 3408 strings out of 493921
+ 46871 string characters out of 3152883
+ 238119 words of memory out of 3000000
+ 6655 multiletter control sequences out of 15000+200000
  39746 words of font info for 73 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
- 27i,15n,24p,1340b,480s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/MiKTeX 2.9/fonts/enc/dvips/font
-name/8r.enc}<D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pf
-b><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr5.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy5.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D
-:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/ti
-mes/utmbi8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/MiKTeX 2.9/
-fonts/type1/urw/times/utmri8a.pfb>
-Output written on gama_opt.pdf (2 pages, 174731 bytes).
+ 27i,15n,24p,1340b,680s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/MiKTeX 2.9/fonts/enc/dvips/fontna
+me/8r.enc}<D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><D:/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmex10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+<D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1/
+urw/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/MiKTe
+X 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utm
+ri8a.pfb>
+Output written on gama_opt.pdf (4 pages, 211792 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
+ 80 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

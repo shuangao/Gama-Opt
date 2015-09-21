@@ -346,6 +346,7 @@
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
+%\usepackage{algpseudocode}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{subfigure}
@@ -360,7 +361,8 @@
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
 \newcommand{\algorithmicbreak}{\textbf{break}}
-
+\newtheorem{theorem}{Theorem}
+\newtheorem{theorem}{Proof}
 \begin{document}
 %
 % paper title
@@ -455,6 +457,7 @@ Email: cling@csd.uwo.ca}}
 \input{statement.tex}
 
 \section{Experiment}
+\input{gama_exp.tex}
 
 \section{Conclusion}
 

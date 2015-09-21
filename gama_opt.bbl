@@ -87,4 +87,9 @@ G.~C. Cawley, ``Leave-one-out cross-validation based model selection criteria
   International Joint Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax
   IEEE, 2006, pp. 1661--1668.
 
+\bibitem{crammer2002algorithmic}
+K.~Crammer and Y.~Singer, ``On the algorithmic implementation of multiclass
+  kernel-based vector machines,'' \emph{The Journal of Machine Learning
+  Research}, vol.~2, pp. 265--292, 2002.
+
 \end{thebibliography}
