@@ -1,7 +1,7 @@
 \begin{algorithm}
        \caption{$\gamma$ optimization}\label{alg:1}
         \begin{algorithmic}[1]
-            \REQUIRE $\psi,\alpha',\alpha'',T$,
+            \REQUIRE $\psi,\alpha',\alpha'',T,\psi$,
             \ENSURE $\gamma=\left\{\gamma^1,...,\gamma^n\right\}, \beta$
             \STATE $\beta \leftarrow 0, \gamma \leftarrow 1$
             \FOR {$iter=1$ to $T$}
@@ -13,8 +13,8 @@
                 	\STATE ${\Delta _\gamma }\leftarrow {\Delta _\gamma }+\lambda_1\gamma$ 
                 	\STATE ${\Delta _\beta }\leftarrow {\Delta _\beta }+\lambda_2\beta$
                 	\FOR {$r=1$ to $N+1$}
-	                    \STATE $loss_{ir} = 1 - {\varepsilon _{{y_i},r}} + {\hat Y_{ir}} - {\hat Y_{i{y_i}}}$
-	                    \IF{$loss_{ir}>0$}
+	                    \STATE $l_{ir} = 1 - {\varepsilon _{{y_i}r}} + {\hat Y_{ir}} - {\hat Y_{i{y_i}}}$
+	                    \IF{$l_{ir}>0$}
 	                        \IF {$y_i,r \in \{1,...,N\}$}
 	                            \STATE $\Delta _\gamma^{{y_i}} \leftarrow \Delta _\gamma^{{y_i}} - \frac{{{\alpha''_{i{y_i}}}}}{{{\psi^{-1}_{ii}}}}$%
 	                            \STATE $\Delta _\gamma^{{r}} \leftarrow \Delta _\gamma^{{r}} + \frac{{{\alpha''_{i{r}}}}}{{{\psi^{-1}_{ii}}}}$%

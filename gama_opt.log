@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  23 SEP 2015 14:02
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  29 SEP 2015 16:44
 entering extended mode
 **gama_opt.tex
 (D:\LaTex_Files\Gama-Opt\gama_opt.tex
@@ -396,45 +396,55 @@ Overfull \hbox (33.72586pt too wide) detected at line 136
 
 (D:\LaTex_Files\Gama-Opt\agl1.tex) [2] (D:\LaTex_Files\Gama-Opt\theorem.tex
 ** ATTENTION: \proof is deprecated (line 4). Use \IEEEproof instead.
-)) (D:\LaTex_Files\Gama-Opt\gama_exp.tex
-Package epstopdf Info: Source file: <fig/good_test.eps>
-(epstopdf)                    date: 2015-09-22 14:03:28
-(epstopdf)                    size: 16048 bytes
-(epstopdf)             Output file: <fig/good_test-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-22 14:48:05
-(epstopdf)                    size: 6961 bytes
-(epstopdf)             Command: <epstopdf --outfile=fig/good_test-eps-converted
--to.pdf fig/good_test.eps>
-(epstopdf)             \includegraphics on input line 7.
-Package epstopdf Info: Output file is already uptodate.
+)) (D:\LaTex_Files\Gama-Opt\gama_exp.tex [3]
+Package epstopdf Info: Source file: <fig/C2C_RBF.eps>
+(epstopdf)                    date: 2015-09-29 16:43:12
+(epstopdf)                    size: 18436 bytes
+(epstopdf)             Output file: <fig/C2C_RBF-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-28 11:16:36
+(epstopdf)                    size: 7786 bytes
+(epstopdf)             Command: <epstopdf --outfile=fig/C2C_RBF-eps-converted-t
+o.pdf fig/C2C_RBF.eps>
+(epstopdf)             \includegraphics on input line 11.
+runsystem(epstopdf --outfile=fig/C2C_RBF-eps-converted-to.pdf fig/C2C_RBF.eps).
+..executed (allowed).
 
-<fig/good_test-eps-converted-to.pdf, id=24, 1129.21875pt x 451.6875pt>
-File: fig/good_test-eps-converted-to.pdf Graphic file (type pdf)
+Package epstopdf Info: Result file: <fig/C2C_RBF-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-29 16:44:44
+(epstopdf)                    size: 8013 bytes.
 
-<use fig/good_test-eps-converted-to.pdf>
-Package pdftex.def Info: fig/good_test-eps-converted-to.pdf used on input line 
-7.
-(pdftex.def)             Requested size: 524.09917pt x 142.26163pt.
-Package epstopdf Info: Source file: <fig/bad_test.eps>
-(epstopdf)                    date: 2015-09-22 14:47:28
-(epstopdf)                    size: 16401 bytes
-(epstopdf)             Output file: <fig/bad_test-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-22 14:48:06
-(epstopdf)                    size: 7121 bytes
-(epstopdf)             Command: <epstopdf --outfile=fig/bad_test-eps-converted-
-to.pdf fig/bad_test.eps>
-(epstopdf)             \includegraphics on input line 12.
-Package epstopdf Info: Output file is already uptodate.
+<fig/C2C_RBF-eps-converted-to.pdf, id=27, 1128.215pt x 526.96875pt>
+File: fig/C2C_RBF-eps-converted-to.pdf Graphic file (type pdf)
 
-<fig/bad_test-eps-converted-to.pdf, id=25, 1128.215pt x 451.6875pt>
-File: fig/bad_test-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/C2C_RBF-eps-converted-to.pdf>
+Package pdftex.def Info: fig/C2C_RBF-eps-converted-to.pdf used on input line 11
+.
+(pdftex.def)             Requested size: 524.0981pt x 142.26738pt.
+Package epstopdf Info: Source file: <fig/A2C_RBF_PHOG.eps>
+(epstopdf)                    date: 2015-09-29 16:44:28
+(epstopdf)                    size: 22566 bytes
+(epstopdf)             Output file: <fig/A2C_RBF_PHOG-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-29 16:25:15
+(epstopdf)                    size: 12537 bytes
+(epstopdf)             Command: <epstopdf --outfile=fig/A2C_RBF_PHOG-eps-conver
+ted-to.pdf fig/A2C_RBF_PHOG.eps>
+(epstopdf)             \includegraphics on input line 17.
+runsystem(epstopdf --outfile=fig/A2C_RBF_PHOG-eps-converted-to.pdf fig/A2C_RBF_
+PHOG.eps)...executed (allowed).
 
-<use fig/bad_test-eps-converted-to.pdf>
-Package pdftex.def Info: fig/bad_test-eps-converted-to.pdf used on input line 1
-2.
-(pdftex.def)             Requested size: 524.0981pt x 142.26163pt.
-) (D:\LaTex_Files\Gama-Opt\gama_opt.bbl
-[3])
+Package epstopdf Info: Result file: <fig/A2C_RBF_PHOG-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-29 16:44:44
+(epstopdf)                    size: 12554 bytes.
+
+<fig/A2C_RBF_PHOG-eps-converted-to.pdf, id=28, 1128.215pt x 526.96875pt>
+File: fig/A2C_RBF_PHOG-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig/A2C_RBF_PHOG-eps-converted-to.pdf>
+Package pdftex.def Info: fig/A2C_RBF_PHOG-eps-converted-to.pdf used on input li
+ne 17.
+(pdftex.def)             Requested size: 524.0981pt x 142.26738pt.
+)
+(D:\LaTex_Files\Gama-Opt\gama_opt.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -446,13 +456,15 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4 <D:/LaTex_Files/Gama-Opt/fig/good_test-eps-converted-to.pdf> <D:/LaTex_Files
-/Gama-Opt/fig/bad_test-eps-converted-to.pdf>]
+[4
+
+] [5 <D:/LaTex_Files/Gama-Opt/fig/C2C_RBF-eps-converted-to.pdf> <D:/LaTex_Files
+/Gama-Opt/fig/A2C_RBF_PHOG-eps-converted-to.pdf>]
 (D:\LaTex_Files\Gama-Opt\gama_opt.aux) ) 
 Here is how much of TeX's memory you used:
  3784 strings out of 493921
- 53424 string characters out of 3152883
- 250928 words of memory out of 3000000
+ 53434 string characters out of 3152883
+ 249930 words of memory out of 3000000
  6995 multiletter control sequences out of 15000+200000
  39746 words of font info for 73 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
@@ -470,9 +482,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1/ur
 w/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/MiKTeX 
 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on gama_opt.pdf (4 pages, 223806 bytes).
+Output written on gama_opt.pdf (5 pages, 231068 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
+ 93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
