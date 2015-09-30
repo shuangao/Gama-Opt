@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  29 SEP 2015 16:44
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  30 SEP 2015 16:57
 entering extended mode
 **gama_opt.tex
 (D:\LaTex_Files\Gama-Opt\gama_opt.tex
@@ -338,20 +338,6 @@ G,.JBIG2,.JB2,.eps]
 ))
 \c@theorem=\count119
 
-
-! LaTeX Error: Command \theorem already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.367 \begin
-            {document}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 (D:\LaTex_Files\Gama-Opt\gama_opt.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 367.
 LaTeX Font Info:    ... okay on input line 367.
@@ -401,47 +387,37 @@ Package epstopdf Info: Source file: <fig/C2C_RBF.eps>
 (epstopdf)                    date: 2015-09-29 16:43:12
 (epstopdf)                    size: 18436 bytes
 (epstopdf)             Output file: <fig/C2C_RBF-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-28 11:16:36
-(epstopdf)                    size: 7786 bytes
+(epstopdf)                    date: 2015-09-29 16:44:44
+(epstopdf)                    size: 8013 bytes
 (epstopdf)             Command: <epstopdf --outfile=fig/C2C_RBF-eps-converted-t
 o.pdf fig/C2C_RBF.eps>
-(epstopdf)             \includegraphics on input line 11.
-runsystem(epstopdf --outfile=fig/C2C_RBF-eps-converted-to.pdf fig/C2C_RBF.eps).
-..executed (allowed).
-
-Package epstopdf Info: Result file: <fig/C2C_RBF-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-29 16:44:44
-(epstopdf)                    size: 8013 bytes.
+(epstopdf)             \includegraphics on input line 22.
+Package epstopdf Info: Output file is already uptodate.
 
 <fig/C2C_RBF-eps-converted-to.pdf, id=27, 1128.215pt x 526.96875pt>
 File: fig/C2C_RBF-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/C2C_RBF-eps-converted-to.pdf>
-Package pdftex.def Info: fig/C2C_RBF-eps-converted-to.pdf used on input line 11
+Package pdftex.def Info: fig/C2C_RBF-eps-converted-to.pdf used on input line 22
 .
 (pdftex.def)             Requested size: 524.0981pt x 142.26738pt.
 Package epstopdf Info: Source file: <fig/A2C_RBF_PHOG.eps>
 (epstopdf)                    date: 2015-09-29 16:44:28
 (epstopdf)                    size: 22566 bytes
 (epstopdf)             Output file: <fig/A2C_RBF_PHOG-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-29 16:25:15
-(epstopdf)                    size: 12537 bytes
+(epstopdf)                    date: 2015-09-29 16:44:44
+(epstopdf)                    size: 12554 bytes
 (epstopdf)             Command: <epstopdf --outfile=fig/A2C_RBF_PHOG-eps-conver
 ted-to.pdf fig/A2C_RBF_PHOG.eps>
-(epstopdf)             \includegraphics on input line 17.
-runsystem(epstopdf --outfile=fig/A2C_RBF_PHOG-eps-converted-to.pdf fig/A2C_RBF_
-PHOG.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <fig/A2C_RBF_PHOG-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-29 16:44:44
-(epstopdf)                    size: 12554 bytes.
+(epstopdf)             \includegraphics on input line 28.
+Package epstopdf Info: Output file is already uptodate.
 
 <fig/A2C_RBF_PHOG-eps-converted-to.pdf, id=28, 1128.215pt x 526.96875pt>
 File: fig/A2C_RBF_PHOG-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2C_RBF_PHOG-eps-converted-to.pdf>
 Package pdftex.def Info: fig/A2C_RBF_PHOG-eps-converted-to.pdf used on input li
-ne 17.
+ne 28.
 (pdftex.def)             Requested size: 524.0981pt x 142.26738pt.
 )
 (D:\LaTex_Files\Gama-Opt\gama_opt.bbl)
@@ -456,16 +432,14 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4
-
-] [5 <D:/LaTex_Files/Gama-Opt/fig/C2C_RBF-eps-converted-to.pdf> <D:/LaTex_Files
-/Gama-Opt/fig/A2C_RBF_PHOG-eps-converted-to.pdf>]
+[4] [5 <D:/LaTex_Files/Gama-Opt/fig/C2C_RBF-eps-converted-to.pdf> <D:/LaTex_Fil
+es/Gama-Opt/fig/A2C_RBF_PHOG-eps-converted-to.pdf>]
 (D:\LaTex_Files\Gama-Opt\gama_opt.aux) ) 
 Here is how much of TeX's memory you used:
- 3784 strings out of 493921
- 53434 string characters out of 3152883
- 249930 words of memory out of 3000000
- 6995 multiletter control sequences out of 15000+200000
+ 3785 strings out of 493921
+ 53453 string characters out of 3152883
+ 249934 words of memory out of 3000000
+ 6996 multiletter control sequences out of 15000+200000
  39746 words of font info for 73 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
  42i,18n,24p,1340b,680s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -482,7 +456,7 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1/ur
 w/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/MiKTeX 
 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on gama_opt.pdf (5 pages, 231068 bytes).
+Output written on gama_opt.pdf (5 pages, 233416 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -92,4 +92,10 @@ K.~Crammer and Y.~Singer, ``On the algorithmic implementation of multiclass
   kernel-based vector machines,'' \emph{The Journal of Machine Learning
   Research}, vol.~2, pp. 265--292, 2002.
 
+\bibitem{jie2011multiclass}
+L.~Jie, T.~Tommasi, and B.~Caputo, ``Multiclass transfer learning from
+  unconstrained priors,'' in \emph{Computer Vision (ICCV), 2011 IEEE
+  International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2011, pp. 1863--1870.
+
 \end{thebibliography}
