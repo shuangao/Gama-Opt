@@ -1,7 +1,7 @@
 Our method works in the following scenario. There is a image dataset (source data) containing $N$ categories and a classifier trained from this dataset to distinguish these $N$ categories. This (source) classifier and the features used to learn it is publicly accessible while the dataset itself is private (unknown distribution).  Now we collect our own image dataset (target data) coming from $N+1$ categories. This target dataset consists of $N$ identical categories to the source data and one new category related to the previous $N$ categories. In order to train a new classifier for our new task, we would expect our classifier to get better results with respect to 
 \begin{itemize}
 \item Maximize positive transfer. Since we know that these two task share some information, our classifier should transfer useful information as much as possible.
-\item Minimize negative transfer. The data distribution of the source data is unknown. In the extreme situation, the data distribution of the two task could be totally different. Then the knowledge from previous task is negative transfer and should be disposed.
+\item Minimize negative transfer. The data distribution of the source data is unknown. In the extreme situation, the data distribution of the two task could be totally different. Then these irrelevant prior knowledge should be considered as irrelevant and disposed.
 \end{itemize}
 
 \hl{In this paper, we focus our work on transferring the knowledge with LS-SVM as the classifier for multi-class transfer problem. In the following we briefly introduce the mathermatical setting of our problem and show   }
@@ -31,8 +31,8 @@ Here we introduce the notations used in the rest of the paper. \hl{We use any le
         \hline
     $a_i,w_i$ & $i_{th}$ column of matrix $a$ and $w$\\\hline
     $d_\gamma$ &  diagonal matrix with$\left[ {{\gamma _1},...,{\gamma _N}} \right]$ in its main diagonal\\\hline
-    $\beta$ & row vector $\left[ {{\beta _1},...,{\beta _N}} \right]$\\ \hline
-    $\varepsilon_{ny_i}$&$\varepsilon _{n{y_i}}=1$ if $n=y_i$ and 0 otherwise\\ \hline
+    $\beta$ & row vector $\left[ {{\beta _1},...,{\beta _N}} \right]$ to control the prior knowledge for the new category\\ \hline
+    $\varepsilon_{ny_i}$&loss parameter. $\varepsilon _{n{y_i}}=1$ if $n=y_i$ and 0 otherwise\\ \hline
     \end{tabular}%
   \label{tab:notation}%
 \end{table}%
@@ -84,8 +84,26 @@ The closed-form of the optimal solution to  Eq. (\ref{eq:opt}) is:
 \end{equation*}
 Here $\alpha_{ij}$ is the element $(i,j)$ in $\alpha$.
 
-Let $\psi$ denotes the first term of left-hand side in Eq. (\ref{eq:linear}). \hl{closed form in matrix format}
-
+Let $\psi$ denotes the first term of left-hand side in Eq. (\ref{eq:linear}) and let:
+\begin{equation}
+\begin{array}{c}
+ {\psi}\left[ {\begin{array}{*{20}{c}}
+{\alpha '}\\
+{b'}
+\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
+Y\\
+0
+\end{array}} \right]\\
+{\psi}\left[ {\begin{array}{*{20}{c}}
+{\alpha ''}\\
+{b''}
+\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
+{X{{\left( {W'} \right)}^T}}\\
+0
+\end{array}} \right]
+\end{array}
+\end{equation}
+We have:
 \begin{equation}\label{eq:solution}
   \left[ {\begin{array}{*{20}{c}}
 \alpha \\
@@ -105,16 +123,21 @@ From Eq. (\ref{eq:solution}) we can see that, the solution of Eq. (\ref{eq:linea
 
 \subsection{Optimize $\gamma$ and $\beta$}
 \hl{introduce LOO error estimation}
+From above, we can see that the hyperplane for the target problem is determined by $\gamma$ and $\beta$. Negative transfer happens when the model aggressively leverage over irrelevant prior knowledge, i.e. set a  large value to $\gamma$ and $\beta$. However, aggressive leverage over informative priors can improve the performance of the transfer model greatly. Inspired by some previous works \cite{tommasi2014learning} \cite{kuzborskij2013n}, we proposed \hl{our method} that can minimize the affect of negative transfer from irrelevant priors.
 
-\hl{introduce our objective function}
+\hl{As we mentioned above, another important advantage of LS-SVM over the other model is that we can get unbiased LOO error in closed form} \cite{cawley2006leave}. The unbiased LOO estimation for sample $x_i$ can be written as:
+\begin{equation}
+{\hat Y_{i,n}} = {Y_{i,n}} - \frac{{{\alpha _{in}}}}{{\psi_{ii}^{ - 1}}}{\text{    for   }}n = 1,...,N + 1
+\end{equation}
+Here $\psi^{-1}$ is the inverse of matrix $\psi$ and  $\psi_{ii}^{-1}$ is its $ith$ diagonal element. 
 
-\hl{Let us call $\xi_i$ the loss of our multi-class prediction for example $x_i$ and $\xi_i$ can be defined as} \cite{crammer2002algorithmic}:
+\hl{Let us call $\xi_i$ the loss of our multi-class prediction for example $x_i$, and $\xi_i$ can be defined as} \cite{crammer2002algorithmic}:
 \begin{equation}\label{eq:train_loss}
 \xi_i(\gamma,\beta) = \mathop {\max }\limits_{n \in \left\lbrace 1,...,N+1 \right\rbrace } {\left[ {1 - {\varepsilon _{n{y_i}}} + {{\hat Y}_{in}}\left( {\gamma ,\beta } \right) - {{\hat Y}_{i{y_i}}}\left( {\gamma ,\beta } \right)} \right]}
 \end{equation}
 Where $\varepsilon _{n{y_i}}=1$ if $n=y_i$ and 0 otherwise. $\xi_i(\gamma,\beta)>0$ if example $x_i$ is misclassified. The intuition behind this loss function is to enforce the distance between the true class and other classes to be at least 1.
 
-And we define our objective function as:
+Then we define our objective function as:
 \begin{equation}\label{loss}
 \begin{aligned}
 & \textbf{min}
@@ -124,7 +147,7 @@ And we define our objective function as:
 & & &\lambda_1,\lambda_2 \ge 0
 \end{aligned}
 \end{equation}
-\hl{explanation of two parameters, further refer to }\cite{crammer2002algorithmic}
+Here $\lambda_1$ and $\lambda_2$ are two regularization parameters to prevent overfitting. More importantly, by adding these L2 regularization terms, we can guarantee that the optimal $\gamma$ and $\beta$ can eliminate the effect of negative transfer (for more details, see Theorem \ref{th:1}). 
 
 By adding a dual set of variables, one for each constraint, we get the Lagrangian of the optimization problem:
 \begin{equation}\label{eq:dual}
@@ -134,6 +157,8 @@ By adding a dual set of variables, one for each constraint, we get the Lagrangia
  \textbf{subject to} \qquad {} & \forall i,r \quad {} {\eta _{i,r}} \ge 0
 \end{aligned}
 \end{equation}
+
+For simplification, 
 
 \hl{Algorithm for optimizaiton, convex-non-differentiable}
 \input{agl1.tex}

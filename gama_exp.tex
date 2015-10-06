@@ -1,25 +1,35 @@
-\subsection{Dataset}
+In this section, we show empirical results of our algorithm on different transferring situations on two datasets: AwA\footnote{The features of AwA dataset is available from http://attributes.kyb.tuebingen.mpg.de/} \cite{lampert2009learning} and Caltech-256\footnote{Images for Caltech-256 is available from http://www.vision.caltech.edu/Image\_Datasets/Caltech256/} \cite{griffin2007caltech}. We design the following \hl{3 sets of experiments: learning from informative prior, irrelevant prior and mixed prior, } to show the effectiveness of our algorithm.
+\subsection{Dataset \& Settings}
+Caltch-256 contains 30607 images from 256 categories. We select the following 10 categories: \textit{bat, bear, dolphin, giraffe, gorilla, horse, leopard, raccoon, skunk, zebra} as our dataset.
+
+AwA dataset consists of 50 animal categories. Its source images is not publicly accessible and we can only access the six pre-extracted feature representations for each image. This property makes it natural as the unknown distribution source dataset to train the prior knowledge. We choose the identical 10 categories as those in Caltech-256 as the source dataset.
 
 \subsection{Baselines}
-We compare our algorithm with two kinds of baselines. The first one is methods without leveraging any prior knowledge (no transfer baselines). The second consists of some methods with transfer techniques. Here are the no transfer baselines 
+We compare our algorithm with two kinds of baselines. The first one is methods without leveraging any prior knowledge (no transfer baselines). The second consists of some methods with transfer techniques. Here are the no transfer baselines. 
 
-\textbf{0+T(arget):}
+\textbf{0+T(arget):} LS-SVM trained only on target data. This baseline can be the indicator as the best performance in the \hl{bad oracle experiment.}
 
-\textbf{S(ource)+T(arget):} Only in good oracle.
+\textbf{S(ource)+T(arget):} \hl{This baseline is only used in good oracle experiment.} We combined the source and target data, assuming that we have fully access to all data, to train the LS-SVM. The result of this baseline might be considered as the best performance achieved in the experiment as well as an important reference for assessing the models with transfer learning methods.
 
-\textbf{S(ource)+T:}
+\textbf{S(ource)+1:} This method only train a new binary LS-SVM for the new category. For the rest of the classes, we use the predictions of the classifiers trained from source data directly. This is arguably the easiest way for transfer learning. \hl{In some of our experiments, it is a good indicator when negative transfer happens.} 
 
-Transfer baselines:
+We select the following 3 methods as our transfer baselines. The general property of these 3 methods is that they all try to leverage multiple prior knowledge to benefit the transfer procedure.
 
-\textbf{MKTL \cite{jie2011multiclass}:} 
+\textbf{MKTL \cite{jie2011multiclass}:} This method uses the output of prior models as extra feature inputs, and automatically determine from which prior models to transfer and how much to transfer.
 
-\textbf{Multi-KT \cite{tommasi2014learning}:}
 
-\textbf{MULTIpLE \cite{kuzborskij2013n}:}
+\textbf{Multi-KT \cite{tommasi2014learning}:} This method has similar idea with MKTL. It uses LOO error to determine how much to transfer from prior models and convert it into solving the convex optimization problem.
+
+\textbf{MULTIpLE \cite{kuzborskij2013n}:} The basic setting of this method is similar like ours. It is designed to balance the performance between learning the new category and preserving the model from prior knowledge.
 
 \subsection{transfer from good oracle}
 \begin{figure*}
-\includegraphics[width=\textwidth,height=5cm]{fig/C2C_RBF.eps}
+\centering
+
+\subfloat[Results on Caltech dataset ]{\includegraphics[width=\textwidth,height=5cm]{fig/C2C_RBF.eps}}
+\newline
+\subfloat[Results on AwA dataset] {\includegraphics[width=\textwidth,height=5cm]{fig/A2A_RBF.eps}}
+
 \caption{Acc for good oracle}
 \end{figure*}
 
