@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  20 OCT 2015 14:52
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  20 OCT 2015 15:45
 entering extended mode
 **gama_opt.tex
 (D:\LaTex_Files\Gama-Opt\gama_opt.tex
@@ -418,10 +418,7 @@ Package pdftex.def Info: fig/negative.png used on input line 17.
 (pdftex.def)             Requested size: 211.84306pt x 161.25368pt.
 ) (D:\LaTex_Files\Gama-Opt\gama_works.tex)
 (D:\LaTex_Files\Gama-Opt\statement.tex [2 <D:/LaTex_Files/Gama-Opt/fig/negative
-.png>]
-Underfull \vbox (badness 4927) has occurred while \output is active []
-
- [3]
+.png>] [3]
 Overfull \hbox (2.97462pt too wide) detected at line 153
 [] []
  []
@@ -470,11 +467,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4860 strings out of 493921
  72836 string characters out of 3152883
- 262603 words of memory out of 3000000
+ 256603 words of memory out of 3000000
  8050 multiletter control sequences out of 15000+200000
  45438 words of font info for 90 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
- 44i,21n,42p,1831b,767s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,21n,42p,1942b,767s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<D:/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmbx10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.
 pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MiKTeX 2.9/fon
@@ -489,7 +486,7 @@ fonts/cm/cmsy10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:
 /urw/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/MiKT
 eX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on gama_opt.pdf (7 pages, 270507 bytes).
+Output written on gama_opt.pdf (7 pages, 270858 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
