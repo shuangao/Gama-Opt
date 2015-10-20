@@ -21,15 +21,52 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{pan2010survey}
-S.~J. Pan and Q.~Yang, ``A survey on transfer learning,'' \emph{Knowledge and
-  Data Engineering, IEEE Transactions on}, vol.~22, no.~10, pp. 1345--1359,
-  2010.
-
 \bibitem{tommasi2014learning}
 T.~Tommasi, F.~Orabona, and B.~Caputo, ``Learning categories from few examples
   with multi model knowledge transfer,'' \emph{Pattern Analysis and Machine
   Intelligence, IEEE Transactions on}, vol.~36, no.~5, pp. 928--941, 2014.
+
+\bibitem{fei2006one}
+L.~Fei-Fei, R.~Fergus, and P.~Perona, ``One-shot learning of object
+  categories,'' \emph{Pattern Analysis and Machine Intelligence, IEEE
+  Transactions on}, vol.~28, no.~4, pp. 594--611, 2006.
+
+\bibitem{kuzborskij2013n}
+I.~Kuzborskij, F.~Orabona, and B.~Caputo, ``From n to n+ 1: Multiclass transfer
+  incremental learning,'' in \emph{Computer Vision and Pattern Recognition
+  (CVPR), 2013 IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 2013, pp. 3358--3365.
+
+\bibitem{jie2011multiclass}
+L.~Jie, T.~Tommasi, and B.~Caputo, ``Multiclass transfer learning from
+  unconstrained priors,'' in \emph{Computer Vision (ICCV), 2011 IEEE
+  International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2011, pp. 1863--1870.
+
+\bibitem{Thrun96islearning}
+S.~Thrun, ``Is learning the n-th thing any easier than learning the first?'' in
+  \emph{Advances in Neural Information Processing Systems}.\hskip 1em plus
+  0.5em minus 0.4em\relax The MIT Press, 1996, pp. 640--646.
+
+\bibitem{Lu201514}
+J.~Lu, V.~Behbood, P.~Hao, H.~Zuo, S.~Xue, and G.~Zhang, ``Transfer learning
+  using computational intelligence: A survey,'' \emph{Knowledge-Based Systems},
+  vol.~80, pp. 14 -- 23, 2015, 25th anniversary of Knowledge-Based Systems.
+
+\bibitem{suykens1999least}
+J.~A. Suykens and J.~Vandewalle, ``Least squares support vector machine
+  classifiers,'' \emph{Neural processing letters}, vol.~9, no.~3, pp. 293--300,
+  1999.
+
+\bibitem{kuzborskij2013stability}
+I.~Kuzborskij and F.~Orabona, ``Stability and hypothesis transfer learning,''
+  in \emph{Proceedings of the 30th International Conference on Machine
+  Learning}, 2013, pp. 942--950.
+
+\bibitem{pan2010survey}
+S.~J. Pan and Q.~Yang, ``A survey on transfer learning,'' \emph{Knowledge and
+  Data Engineering, IEEE Transactions on}, vol.~22, no.~10, pp. 1345--1359,
+  2010.
 
 \bibitem{lim2012transfer}
 J.~J. Lim, ``Transfer learning by borrowing examples for multiclass object
@@ -52,12 +89,6 @@ Y.~Aytar and A.~Zisserman, ``Tabula rasa: Model transfer for object category
   detection,'' in \emph{Computer Vision (ICCV), 2011 IEEE International
   Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2011, pp.
   2252--2259.
-
-\bibitem{kuzborskij2013n}
-I.~Kuzborskij, F.~Orabona, and B.~Caputo, ``From n to n+ 1: Multiclass transfer
-  incremental learning,'' in \emph{Computer Vision and Pattern Recognition
-  (CVPR), 2013 IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax
-  IEEE, 2013, pp. 3358--3365.
 
 \bibitem{davis2009deep}
 J.~Davis and P.~Domingos, ``Deep transfer via second-order markov logic,'' in
@@ -92,6 +123,15 @@ K.~Crammer and Y.~Singer, ``On the algorithmic implementation of multiclass
   kernel-based vector machines,'' \emph{The Journal of Machine Learning
   Research}, vol.~2, pp. 265--292, 2002.
 
+\bibitem{BoydCO}
+S.~Boyd and L.~Vandenberghe, \emph{Convex Optimization}.\hskip 1em plus 0.5em
+  minus 0.4em\relax New York, NY, USA: Cambridge University Press, 2004.
+
+\bibitem{shalev2011pegasos}
+S.~Shalev-Shwartz, Y.~Singer, N.~Srebro, and A.~Cotter, ``Pegasos: Primal
+  estimated sub-gradient solver for svm,'' \emph{Mathematical programming},
+  vol. 127, no.~1, pp. 3--30, 2011.
+
 \bibitem{lampert2009learning}
 C.~H. Lampert, H.~Nickisch, and S.~Harmeling, ``Learning to detect unseen
   object classes by between-class attribute transfer,'' in \emph{Computer
@@ -101,11 +141,5 @@ C.~H. Lampert, H.~Nickisch, and S.~Harmeling, ``Learning to detect unseen
 \bibitem{griffin2007caltech}
 G.~Griffin, A.~Holub, and P.~Perona, ``Caltech-256 object category dataset,''
   2007.
-
-\bibitem{jie2011multiclass}
-L.~Jie, T.~Tommasi, and B.~Caputo, ``Multiclass transfer learning from
-  unconstrained priors,'' in \emph{Computer Vision (ICCV), 2011 IEEE
-  International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2011, pp. 1863--1870.
 
 \end{thebibliography}

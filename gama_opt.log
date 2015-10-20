@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  6 OCT 2015 11:13
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  19 OCT 2015 16:17
 entering extended mode
 **gama_opt.tex
 (D:\LaTex_Files\Gama-Opt\gama_opt.tex
@@ -365,67 +365,79 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 ))
 \c@theorem=\count123
+\c@corollary=\count124
+\c@lemma=\count125
 
-(D:\LaTex_Files\Gama-Opt\gama_opt.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 369.
-LaTeX Font Info:    ... okay on input line 369.
+(D:\LaTex_Files\Gama-Opt\gama_opt.aux
 
-("D:\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+LaTeX Warning: Label `alg:1' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+ ("D:\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
+\scratchcounter=\count126
 \scratchdimen=\dimen154
 \scratchbox=\box31
-\nofMPsegments=\count125
-\nofMParguments=\count126
+\nofMPsegments=\count127
+\nofMParguments=\count128
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count127
+\MPscratchCnt=\count129
 \MPscratchDim=\dimen155
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
+\MPnumerator=\count130
+\makeMPintoPDFobject=\count131
 \everyMPtoPDFconversion=\toks31
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
- (D:\LaTex_Files\Gama-Opt\gama_intro.tex
-<fig/negative.png, id=1, 353.06906pt x 268.75406pt>
+ (D:\LaTex_Files\Gama-Opt\gama_intro.tex [1{C:/ProgramData/MiKTeX/2.9/pdftex/co
+nfig/pdftex.map}
+
+
+] <fig/negative.png, id=8, 353.06906pt x 268.75406pt>
 File: fig/negative.png Graphic file (type png)
- <use fig/negative.png>
-Package pdftex.def Info: fig/negative.png used on input line 3.
+
+<use fig/negative.png>
+Package pdftex.def Info: fig/negative.png used on input line 17.
 (pdftex.def)             Requested size: 211.84306pt x 161.25368pt.
-)
-(D:\LaTex_Files\Gama-Opt\gama_works.tex) (D:\LaTex_Files\Gama-Opt\statement.tex
-[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+) (D:\LaTex_Files\Gama-Opt\gama_works.tex)
+(D:\LaTex_Files\Gama-Opt\statement.tex [2 <D:/LaTex_Files/Gama-Opt/fig/negative
+.png>]
+Underfull \vbox (badness 4927) has occurred while \output is active []
 
-
- <D:/LaTex_Files/Gama-Opt/fig/negative.png>]
-Overfull \hbox (14.10365pt too wide) detected at line 76
+ [3]
+Overfull \hbox (2.97462pt too wide) detected at line 153
 [] []
  []
 
-[2]
-Overfull \hbox (33.72586pt too wide) detected at line 159
-[] []
+
+Overfull \hbox (5.56476pt too wide) detected at line 163
+[] \OT1/cmr/m/n/10 = []
  []
 
-(D:\LaTex_Files\Gama-Opt\agl1.tex) (D:\LaTex_Files\Gama-Opt\theorem.tex
+(D:\LaTex_Files\Gama-Opt\agl1.tex) (D:\LaTex_Files\Gama-Opt\theorem2.tex
+Underfull \hbox (badness 5756) in paragraph at lines 8--10
+\OT1/ptm/m/n/10 Let $\OT1/cmr/m/n/10 []$ \OT1/ptm/m/n/10 be the sub-gradient f
+or $\OML/cmm/m/it/10 J\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 )$ \
+OT1/ptm/m/n/10 and $\OML/cmm/m/it/10 [] \OT1/cmr/m/n/10 =$
+ []
+
+) (D:\LaTex_Files\Gama-Opt\theorem.tex
 ** ATTENTION: \proof is deprecated (line 4). Use \IEEEproof instead.
-[3])
-
-LaTeX Warning: Reference `th:supb' on page 4 undefined on input line 172.
-
-) (D:\LaTex_Files\Gama-Opt\gama_exp.tex
+[4])) (D:\LaTex_Files\Gama-Opt\gama_exp.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--1
 [][][]\OT1/ptm/m/n/8 The fea-tures of AwA dataset is avail-able from
  []
@@ -435,6 +447,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--1
 [][][]\OT1/ptm/m/n/8 Images for Caltech-256 is avail-able from
  []
 
+[5]
 Package epstopdf Info: Source file: <fig/C2C_RBF.eps>
 (epstopdf)                    date: 2015-09-29 16:43:12
 (epstopdf)                    size: 18436 bytes
@@ -445,7 +458,7 @@ Package epstopdf Info: Source file: <fig/C2C_RBF.eps>
 o.pdf fig/C2C_RBF.eps>
 (epstopdf)             \includegraphics on input line 29.
 Package epstopdf Info: Output file is already uptodate.
-<fig/C2C_RBF-eps-converted-to.pdf, id=28, 1128.215pt x 526.96875pt>
+ <fig/C2C_RBF-eps-converted-to.pdf, id=36, 1128.215pt x 526.96875pt>
 File: fig/C2C_RBF-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/C2C_RBF-eps-converted-to.pdf>
@@ -463,7 +476,7 @@ o.pdf fig/A2A_RBF.eps>
 (epstopdf)             \includegraphics on input line 31.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_RBF-eps-converted-to.pdf, id=29, 1128.215pt x 526.96875pt>
+<fig/A2A_RBF-eps-converted-to.pdf, id=37, 1128.215pt x 526.96875pt>
 File: fig/A2A_RBF-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2A_RBF-eps-converted-to.pdf>
@@ -471,31 +484,43 @@ Package pdftex.def Info: fig/A2A_RBF-eps-converted-to.pdf used on input line 31
 .
 (pdftex.def)             Requested size: 524.0981pt x 142.26738pt.
 Package epstopdf Info: Source file: <fig/A2C_RBF_PHOG.eps>
-(epstopdf)                    date: 2015-09-29 16:44:28
-(epstopdf)                    size: 22566 bytes
+(epstopdf)                    date: 2015-10-07 15:32:41
+(epstopdf)                    size: 17000 bytes
 (epstopdf)             Output file: <fig/A2C_RBF_PHOG-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-29 16:44:44
-(epstopdf)                    size: 12554 bytes
+(epstopdf)                    date: 2015-10-07 15:32:49
+(epstopdf)                    size: 7754 bytes
 (epstopdf)             Command: <epstopdf --outfile=fig/A2C_RBF_PHOG-eps-conver
 ted-to.pdf fig/A2C_RBF_PHOG.eps>
 (epstopdf)             \includegraphics on input line 38.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2C_RBF_PHOG-eps-converted-to.pdf, id=30, 1128.215pt x 526.96875pt>
+<fig/A2C_RBF_PHOG-eps-converted-to.pdf, id=38, 1128.215pt x 376.40625pt>
 File: fig/A2C_RBF_PHOG-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2C_RBF_PHOG-eps-converted-to.pdf>
 Package pdftex.def Info: fig/A2C_RBF_PHOG-eps-converted-to.pdf used on input li
 ne 38.
-(pdftex.def)             Requested size: 524.0981pt x 142.26738pt.
-)
-(D:\LaTex_Files\Gama-Opt\gama_opt.bbl
-Underfull \vbox (badness 4492) has occurred while \output is active []
+(pdftex.def)             Requested size: 524.0981pt x 142.26622pt.
+Package epstopdf Info: Source file: <fig/A2A_MIX_L6_2345.eps>
+(epstopdf)                    date: 2015-10-07 16:43:01
+(epstopdf)                    size: 16229 bytes
+(epstopdf)             Output file: <fig/A2A_MIX_L6_2345-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-10-07 16:44:24
+(epstopdf)                    size: 7330 bytes
+(epstopdf)             Command: <epstopdf --outfile=fig/A2A_MIX_L6_2345-eps-con
+verted-to.pdf fig/A2A_MIX_L6_2345.eps>
+(epstopdf)             \includegraphics on input line 44.
+Package epstopdf Info: Output file is already uptodate.
 
- [4]
-[5 <D:/LaTex_Files/Gama-Opt/fig/C2C_RBF-eps-converted-to.pdf> <D:/LaTex_Files/G
-ama-Opt/fig/A2A_RBF-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2C_RBF_
-PHOG-eps-converted-to.pdf>])
+<fig/A2A_MIX_L6_2345-eps-converted-to.pdf, id=39, 1128.215pt x 376.40625pt>
+File: fig/A2A_MIX_L6_2345-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig/A2A_MIX_L6_2345-eps-converted-to.pdf>
+Package pdftex.def Info: fig/A2A_MIX_L6_2345-eps-converted-to.pdf used on input
+ line 44.
+(pdftex.def)             Requested size: 524.0981pt x 142.26622pt.
+)
+(D:\LaTex_Files\Gama-Opt\gama_opt.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -507,36 +532,39 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6
+[6] [7 <D:/LaTex_Files/Gama-Opt/fig/C2C_RBF-eps-converted-to.pdf> <D:/LaTex_Fil
+es/Gama-Opt/fig/A2A_RBF-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2C_
+RBF_PHOG-eps-converted-to.pdf>] [8 <D:/LaTex_Files/Gama-Opt/fig/A2A_MIX_L6_2345
+-eps-converted-to.pdf>] (D:\LaTex_Files\Gama-Opt\gama_opt.aux)
 
-] (D:\LaTex_Files\Gama-Opt\gama_opt.aux)
-
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4839 strings out of 493921
- 72907 string characters out of 3152883
- 251391 words of memory out of 3000000
- 8035 multiletter control sequences out of 15000+200000
- 42501 words of font info for 83 fonts, out of 3000000 for 9000
+ 4880 strings out of 493921
+ 73563 string characters out of 3152883
+ 262585 words of memory out of 3000000
+ 8066 multiletter control sequences out of 15000+200000
+ 44331 words of font info for 89 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
- 44i,18n,47p,1340b,767s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,21n,47p,1831b,767s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<D:/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmbx10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.
 pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmmi5.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr5.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb
-><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy5.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/MiKTeX 2.9/font
-s/type1/urw/times/utmbi8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><
-D:/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on gama_opt.pdf (6 pages, 259476 bytes).
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><D:/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cmextra/cmmib7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1
+/urw/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/MiKT
+eX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/ut
+mri8a.pfb>
+Output written on gama_opt.pdf (8 pages, 291443 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
+ 123 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,7 +1,7 @@
 Our method works in the following scenario. There is a image dataset (source data) containing $N$ categories and a classifier trained from this dataset to distinguish these $N$ categories. This (source) classifier and the features used to learn it is publicly accessible while the dataset itself is private (unknown distribution).  Now we collect our own image dataset (target data) coming from $N+1$ categories. This target dataset consists of $N$ identical categories to the source data and one new category related to the previous $N$ categories. In order to train a new classifier for our new task, we would expect our classifier to get better results with respect to 
 \begin{itemize}
 \item Maximize positive transfer. Since we know that these two task share some information, our classifier should transfer useful information as much as possible.
-\item Minimize negative transfer. The data distribution of the source data is unknown. In the extreme situation, the data distribution of the two task could be totally different. Then these irrelevant prior knowledge should be considered as irrelevant and disposed.
+\item \hl{Minimize negative transfer. The data distribution of the source data is unknown. In the extreme situation, the data distribution of the two task could be totally different. Then these irrelevant prior knowledge should be considered as irrelevant and disposed.}
 \end{itemize}
 
 \hl{In this paper, we focus our work on transferring the knowledge with LS-SVM as the classifier for multi-class transfer problem. In the following we briefly introduce the mathermatical setting of our problem and show   }
@@ -45,7 +45,7 @@ Assume that, for our $(N+1)$-category target task, ${x} \in \mathcal{X}$ and ${y
 \textbf{min} && R({w_n}) + \frac{C}{2}\sum\limits_i^l {({Y_{i,n}} - \phi ({x_i}){w_n} - {b_n})^2} \\
 \end{aligned}
 \end{equation*}
-Where $R({w_n})$ is the regularization term to guarantee good generalization performance and avoid overfitting. $\mathbf{Y}$ is a encoded label matrix so that $Y_{i,n}=1$ if $y_i=n$ and $-1$ otherwise.  
+Where $R({w_n})$ is the regularization term to guarantee good generalization performance and avoid overfitting. $\mathbf{Y}$ is a encoded label matrix so that $Y_{in}=1$ if $y_i=n$ and $-1$ otherwise.  
 
 In classic LS-SVM setting, the regularization term is set to $\frac{1}{2}\left\|w_n\right\|^2$ and the optimal $w_n=\phi(X)^T\alpha_n$ while the parameters $(\aleph_n,b_n)$ can be found by solving
 \begin{equation}\label{eq:linear}
@@ -71,7 +71,7 @@ So the multi-class transfer problem can be solved by optimizing the following ob
 \begin{equation}\label{eq:opt}
 \begin{aligned}
 \textbf{min}\qquad {} & \frac{1}{2}\sum\limits_{n = 1}^N {{{\left\| {{w_n} - {\gamma _n}{{w'}_n}} \right\|}^2}}  + \frac{1}{2}{\left\| {{w_{N + 1}} - \sum\limits_{k = 1}^N {w{'_k}{\beta _k}} } \right\|^2}\\& \frac{C}{2}\sum\limits_{n = 1}^{N + 1} {\sum\limits_{i = 1}^l {e_{i,n}^2} }  \\
-\textbf{subject to}\qquad {} &{e_{i,n}} = {Y_{i,n}} - \phi ({x_i}){w_n} - {b_n}
+\textbf{s.t.}\qquad {} &{e_{i,n}} = {Y_{i,n}} - \phi ({x_i}){w_n} - {b_n}
 \end{aligned}
 \end{equation}
 
@@ -82,21 +82,21 @@ The closed-form of the optimal solution to  Eq. (\ref{eq:opt}) is:
 {{w_{N + 1}} = \sum\limits_k^N {{\beta _k}{{w'}_k}}  + \sum\limits_i^l {{\alpha _{i(N + 1)}}{\phi(x_i)}} }&{}
 \end{array}
 \end{equation*}
-Here $\alpha_{ij}$ is the element $(i,j)$ in $\alpha$.
+Here $\alpha_{ij}$ is the element $(i,j)$ in $\boldsymbol{\alpha}$. The intuitive interpretation of the results above is that the hyperplane of the target problem is the linear combination of the prior knowledge (first part of the right side) and empirical knowledge from target task (second part of the right side).
 
 Let $\psi$ denotes the first term of left-hand side in Eq. (\ref{eq:linear}) and let:
 \begin{equation}
 \begin{array}{c}
  {\psi}\left[ {\begin{array}{*{20}{c}}
-{\alpha '}\\
-{b'}
+{\boldsymbol{\alpha} '}\\
+{\boldsymbol{b}'}
 \end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
 Y\\
 0
 \end{array}} \right]\\
 {\psi}\left[ {\begin{array}{*{20}{c}}
-{\alpha ''}\\
-{b''}
+{\boldsymbol{\alpha} ''}\\
+{\boldsymbol{b}''}
 \end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
 {X{{\left( {W'} \right)}^T}}\\
 0
@@ -105,25 +105,15 @@ Y\\
 \end{equation}
 We have:
 \begin{equation}\label{eq:solution}
-  \left[ {\begin{array}{*{20}{c}}
-\alpha \\
-b
-\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
-{\alpha '}\\
-{b'}
-\end{array}} \right] - \left[ {\begin{array}{*{20}{c}}
-{\alpha ''}\\
-{b''}
-\end{array}} \right]\left[ {\begin{array}{*{20}{c}}
-{d_\gamma }&{{\beta ^T}}\\
-0&0
-\end{array}} \right]
+ \boldsymbol{\alpha}  = \boldsymbol{\alpha} ' - \left[ {\begin{array}{*{20}{c}}
+ {\boldsymbol{\alpha} ''{d_r}}&{{\boldsymbol{\alpha} ''\boldsymbol{\beta ^T}}}
+ \end{array}} \right]
 \end{equation}
-From Eq. (\ref{eq:solution}) we can see that, the solution of Eq. (\ref{eq:linear}) is completed once $\gamma=\left[ \gamma_1,...,\gamma_N\right] $ and $\beta$ are set.
+From Eq. (\ref{eq:solution}) we can see that, the solution of Eq. (\ref{eq:linear}) is completed once $\boldsymbol{\gamma}=\left[ \gamma_1,...,\gamma_N\right] $ and $\boldsymbol{\beta}$ are set.
 
 \subsection{Optimize $\gamma$ and $\beta$}
-\hl{introduce LOO error estimation}
-From above, we can see that the hyperplane for the target problem is determined by $\gamma$ and $\beta$. Negative transfer happens when the model aggressively leverage over irrelevant prior knowledge, i.e. set a  large value to $\gamma$ and $\beta$. However, aggressive leverage over informative priors can improve the performance of the transfer model greatly. Inspired by some previous works \cite{tommasi2014learning} \cite{kuzborskij2013n}, we proposed \hl{our method} that can minimize the affect of negative transfer from irrelevant priors.
+\hl{introduce LOO error estimation. In this part, we introduce our method to estimate proper $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ that can prevent negative transfer.}
+From above, we can see that the hyperplane for the target problem is determined by $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$. Negative transfer happens when the model aggressively leverage over irrelevant prior knowledge, i.e. set a  large value to $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$. However, aggressive leverage over informative priors can improve the performance of the transfer model greatly. Inspired by some previous works \cite{tommasi2014learning} \cite{kuzborskij2013n}, we proposed \hl{our method} that can minimize the affect of negative transfer from irrelevant priors.
 
 \hl{As we mentioned above, another important advantage of LS-SVM over the other model is that we can get unbiased LOO error in closed form} \cite{cawley2006leave}. The unbiased LOO estimation for sample $x_i$ can be written as:
 \begin{equation}
@@ -131,7 +121,7 @@ From above, we can see that the hyperplane for the target problem is determined 
 \end{equation}
 Here $\psi^{-1}$ is the inverse of matrix $\psi$ and  $\psi_{ii}^{-1}$ is its $ith$ diagonal element. 
 
-\hl{Let us call $\xi_i$ the loss of our multi-class prediction for example $x_i$, and $\xi_i$ can be defined as} \cite{crammer2002algorithmic}:
+\hl{Let us call $\xi_i$ the empirical error of our multi-class prediction for example $x_i$, and $\xi_i$ can be defined as} \cite{crammer2002algorithmic}:
 \begin{equation}\label{eq:train_loss}
 \xi_i(\gamma,\beta) = \mathop {\max }\limits_{n \in \left\lbrace 1,...,N+1 \right\rbrace } {\left[ {1 - {\varepsilon _{n{y_i}}} + {{\hat Y}_{in}}\left( {\gamma ,\beta } \right) - {{\hat Y}_{i{y_i}}}\left( {\gamma ,\beta } \right)} \right]}
 \end{equation}
@@ -141,34 +131,56 @@ Then we define our objective function as:
 \begin{equation}\label{loss}
 \begin{aligned}
 & \textbf{min}
-& & \frac{{{\lambda _1}}}{2}\sum\limits_{j = 1}^N {{{\left\| {{\gamma _j}} \right\|}^2}}  + \frac{{{\lambda _2}}}{2}\sum\limits_{j = 1}^N {{{\left\| {{\beta _j}} \right\|}^2}}  + \sum\limits_{i = 1}^l {{\xi _i}}   \\
-& \textbf{subject to}
-& & 1 - {\varepsilon _{r{y_i}}} + {\hat Y_{ir}}\left( {\gamma ,\beta } \right) - {\hat Y_{i{y_i}}}\left( {\gamma ,\beta } \right) \le {\xi_i};\\
+& & \frac{{{\lambda _1}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\gamma _n}} \right\|}^2}}  + \frac{{{\lambda _2}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\beta _n}} \right\|}^2}}  + \sum\limits_{i = 1}^l {{\xi _i}}   \\
+& \textbf{s.t.}
+& & 1 - {\varepsilon _{n{y_i}}} + {\hat Y_{in}}\left( {\gamma ,\beta } \right) - {\hat Y_{i{y_i}}}\left( {\gamma ,\beta } \right) \le {\xi_i};\\
 & & &\lambda_1,\lambda_2 \ge 0
 \end{aligned}
 \end{equation}
-Here $\lambda_1$ and $\lambda_2$ are two regularization parameters to prevent overfitting. More importantly, by adding these L2 regularization terms, we can guarantee that the optimal $\gamma$ and $\beta$ can eliminate the effect of negative transfer (for more details, see Theorem \ref{th:1}). 
+
+Here $\lambda_1$ and $\lambda_2$ are two regularization parameters to prevent overfitting. 
+From the objective function above we can see that, for certain $\lambda_1$ and $\lambda_2$, when the prior knowledge is unrelated and negative transfer happens, increasing $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ leads to larger punishment from both regularization and empirical error from target task. Decreasing the affect of prior knowledge reduces the loss of the objective function and eventually prevents negative transfer. Moreover, we also prove that this objective function can avoid negative transfer (for more details, see Theorem \ref{th:1}). On the other hand, if the prior knowledge is related, even though, increasing $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ leads to larger punishment, it also leads to smaller empirical error on the target problem. So the algorithm compromises between the prior and empirical knowledge. \hl{Besides, there are some other properties that make our method efficient.}(see Section \ref{subsec:analysis})
+
 
 By adding a dual set of variables, one for each constraint, we get the Lagrangian of the optimization problem:
 \begin{equation}\label{eq:dual}
 \begin{aligned}
- \textbf{max}\qquad {}& L\left( {\gamma ,\beta ,\xi ,\eta } \right) =\frac{{{\lambda _1}}}{2}\sum\limits_{j = 1}^N {{{\left\| {{\gamma _j}} \right\|}^2}}  + \frac{{{\lambda _2}}}{2}\sum\limits_{j = 1}^N {{{\left\| {{\beta _j}} \right\|}^2}}  + \sum\limits_{i = 1}^l {{\xi _i}} \\
-   &+ \sum\limits_{i,r} {{\eta _{i,r}}\left[ {1 - {\varepsilon _{r{y_i}}} + {{\hat Y}_{ir}}\left( {\gamma ,\beta } \right) - {{\hat Y}_{i{y_i}}}\left( {\gamma ,\beta } \right) - {\xi _i}} \right]}  \\
- \textbf{subject to} \qquad {} & \forall i,r \quad {} {\eta _{i,r}} \ge 0
+ \textbf{max}\qquad {}& L\left( {\gamma ,\beta ,\xi ,\eta } \right) =\\
+ &\frac{{{\lambda _1}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\gamma _n}} \right\|}^2}}  + \frac{{{\lambda _2}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\beta _n}} \right\|}^2}}  + \sum\limits_{i = 1}^l {{\xi _i}} \\
+   &+ \sum\limits_{i,n} {{\eta _{i,n}}\left[ {1 - {\varepsilon _{n{y_i}}} + {{\hat Y}_{in}}\left( {\gamma ,\beta } \right) - {{\hat Y}_{i{y_i}}}\left( {\gamma ,\beta } \right) - {\xi _i}} \right]}  \\
+ \textbf{s.t.} \qquad {} & \forall i,n \quad {} {\eta _{i,n}} \ge 0
 \end{aligned}
 \end{equation}
 
-For simplification, 
-
-\hl{Algorithm for optimizaiton, convex-non-differentiable}
+The problem of Eq. \eqref{eq:dual} is a non-differentiable strongly convex problem. The sub-gradient of it can be written as:
+\begin{equation*}
+{\Delta _\gamma }=\begin{cases}
+\boldsymbol{0}&{y_i}=n\\
+\left[ {0,..,\frac{{\alpha ''}_{in}}{\psi _{ii}^{ - 1}},.., - \frac{{\alpha ''}_{i{y_i}}}{\psi _{ii}^{ - 1}},..,0} \right]&{y_i},n = 1,...N\\
+\left[ {0,..,\frac{{\alpha ''}_{in}}{\psi _{ii}^{ - 1}},..,0} \right]&{y_i} = N + 1;n = 1,...N\\
+\left[ {0,.., - \frac{{\alpha ''}_{i{y_i}}}{\psi _{ii}^{ - 1}},..,0} \right]&\text{otherwise}
+\end{cases}
+\end{equation*}
+\begin{equation*}
+{\Delta _\beta }=\begin{cases}
+ - \sum {{{\alpha ''}_{ik}}{\beta _k}} &{y_i} = N + 1;n = 1,...N\\
+ \sum {{{\alpha ''}_{ik}}{\beta _k}} &{y_i} = 1,..N;n = N+1\\
+\boldsymbol{0}&\text{otherwise}\\
+\end{cases}
+\end{equation*}
+To obtain the optimal values for the problem above, we introduce our method \hl{using sub-gradient descent }\cite{BoydCO} and summarize it in Alg. \ref{alg:1}. 
 \input{agl1.tex}
 
-\subsection{Analysis}
+\subsection{Analysis}\label{subsec:analysis}
+\hl{In this part, we mainly discuss our method in two aspects: convergence analysis and mathermatical proof of preventing negative transfer.} 
+
 \hl{Convergence analysis}
+The primal problem \eqref{loss} becomes the strongly convex problem by adding the L2 regularization terms. Optimizing the strongly convex problem can lead to the following error bound:
+\input{theorem2.tex}
 
 \hl{Superior bound analysis}
 \input{theorem.tex}
 
-When setting $\gamma=\beta = \mathbf{0}$, we don't utilize any knowledge from previous task (see Eq. \eqref{eq:opt}). From Theorem \ref{th:supb} we can conclude \hl{our method can always outperform the method learning directly.}
+When setting $\gamma=\beta = \mathbf{0}$, we don't utilize any knowledge from previous task (see Eq. \eqref{eq:opt}). From Theorem \ref{th:1} we can conclude \hl{our method can always outperform the method learning directly.}
 
 \hl{discuss $\lambda$}

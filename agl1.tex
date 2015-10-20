@@ -1,10 +1,10 @@
-\begin{algorithm}
+\begin{algorithm}\label{alg:1}
        \caption{$\gamma$ optimization}\label{alg:1}
         \begin{algorithmic}[1]
             \REQUIRE $\psi,\alpha',\alpha'',T,\psi$,
             \ENSURE $\gamma=\left\{\gamma^1,...,\gamma^n\right\}, \beta$
-            \STATE $\beta \leftarrow 0, \gamma \leftarrow 1$
-            \FOR {$iter=1$ to $T$}
+            \STATE $\beta^0\leftarrow 0, \gamma^0 \leftarrow 1$
+            \FOR {$t=1$ to $T$}
                 \STATE $\hat Y \leftarrow Y - {\left( {\psi \circ I} \right)^{ - 1}}\left( {\alpha' - \left[ {\begin{array}{*{20}{c}}
 {\alpha''d_\gamma }&{\alpha''\beta^T }
 \end{array}} \right]} \right)$
@@ -28,8 +28,8 @@
 	                    \ENDIF
 	                 \ENDFOR %class ends   
                 \ENDFOR %examples ends
-                \STATE $\beta \leftarrow \beta - \frac{{{\Delta _\beta }}}{{l \times {iter} }}$
-                \STATE $\gamma  \leftarrow \gamma  - \frac{{{\Delta _\gamma }}}{{l\times {iter} }}$
+                \STATE $\beta^t \leftarrow \beta^{(t-1)} - \frac{{{\Delta _\beta }}}{{l \times {t} }}$
+                \STATE $\gamma^t  \leftarrow \gamma^{(t-1)}  - \frac{{{\Delta _\gamma }}}{{l\times {t} }}$
              \ENDFOR %iteration ends
         \end{algorithmic}
 \end{algorithm}
