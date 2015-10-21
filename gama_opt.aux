@@ -5,13 +5,19 @@
 \citation{kuzborskij2013n}
 \citation{jie2011multiclass}
 \citation{Thrun96islearning}
+\citation{kuzborskij2013n}
 \citation{Lu201514}
-\citation{suykens1999least}
 \citation{tommasi2014learning}
 \citation{kuzborskij2013n}
+\citation{yang2007cross}
+\citation{aytar2011tabula}
+\citation{suykens1999least}
 \citation{kuzborskij2013stability}
 \citation{cawley2006leave}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Positive transfer VS Negative transfer. Relying on unrelated priors could lead to negative transfer.\relax }}{1}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:neg}{{1}{1}}
 \citation{pan2010survey}
 \citation{tommasi2014learning}
 \citation{lim2012transfer}
@@ -26,9 +32,8 @@
 \citation{kuzborskij2013n}
 \citation{tommasi2010safety}
 \citation{cawley2006leave}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Positive transfer VS Negative transfer. Relying on unrelated priors could lead to negative transfer.\relax }}{2}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:neg}{{1}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Negative transfer may happen when we transfer prior knowledge $f'$ to target one. Points with different color represent different categories. The data distribution would change even for identical categories in different task. The red points denote the new category in target task. \relax }}{2}}
+\newlabel{fig:distribution}{{2}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Related Works}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}Problem Statement}{2}}
 \citation{yang2007cross}
@@ -44,16 +49,16 @@
 \newlabel{eq:opt}{{2}{3}}
 \newlabel{eq:solution}{{4}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Optimize $\gamma $ and $\beta $}{3}}
-\newlabel{eq:train_loss}{{6}{3}}
 \citation{BoydCO}
 \citation{shalev2011pegasos}
+\newlabel{eq:train_loss}{{6}{4}}
 \newlabel{loss}{{7}{4}}
 \newlabel{eq:dual}{{8}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Analysis}{4}}
-\newlabel{subsec:analysis}{{\unhbox \voidb@x \hbox {III-C}}{4}}
 \newlabel{alg:1}{{\caption@xref {alg:1}{ on input line 1}}{4}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces $\gamma $ optimization\relax }}{4}}
 \newlabel{alg:1}{{1}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Analysis}{4}}
+\newlabel{subsec:analysis}{{\unhbox \voidb@x \hbox {III-C}}{4}}
 \newlabel{th:1}{{1}{4}}
 \citation{lampert2009learning}
 \citation{griffin2007caltech}
@@ -89,9 +94,6 @@
 \bibcite{tommasi2010safety}{18}
 \bibcite{crammer2002algorithmic}{19}
 \bibcite{BoydCO}{20}
-\bibcite{shalev2011pegasos}{21}
-\bibcite{lampert2009learning}{22}
-\bibcite{griffin2007caltech}{23}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}transfer from good oracle}{6}}
 \@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Overall Caltech to Caltech\relax }}{6}}
 \newlabel{tab:C2C}{{II}{6}}
@@ -101,6 +103,9 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-E}}mixed}{6}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Conclusion}{6}}
 \@writefile{toc}{\contentsline {section}{References}{6}}
+\bibcite{shalev2011pegasos}{21}
+\bibcite{lampert2009learning}{22}
+\bibcite{griffin2007caltech}{23}
 \@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Overall AwA to Caltech\relax }}{7}}
 \newlabel{tab:addlabel}{{IV}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces AwA leave class 6 as new category. 2345 as bad class\relax }}{7}}
