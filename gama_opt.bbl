@@ -53,6 +53,18 @@ J.~Lu, V.~Behbood, P.~Hao, H.~Zuo, S.~Xue, and G.~Zhang, ``Transfer learning
   using computational intelligence: A survey,'' \emph{Knowledge-Based Systems},
   vol.~80, pp. 14 -- 23, 2015, 25th anniversary of Knowledge-Based Systems.
 
+\bibitem{yang2007cross}
+J.~Yang, R.~Yan, and A.~G. Hauptmann, ``Cross-domain video concept detection
+  using adaptive svms,'' in \emph{Proceedings of the 15th international
+  conference on Multimedia}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2007,
+  pp. 188--197.
+
+\bibitem{aytar2011tabula}
+Y.~Aytar and A.~Zisserman, ``Tabula rasa: Model transfer for object category
+  detection,'' in \emph{Computer Vision (ICCV), 2011 IEEE International
+  Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2011, pp.
+  2252--2259.
+
 \bibitem{suykens1999least}
 J.~A. Suykens and J.~Vandewalle, ``Least squares support vector machine
   classifiers,'' \emph{Neural processing letters}, vol.~9, no.~3, pp. 293--300,
@@ -83,18 +95,6 @@ M.~Long, Y.~Cao, J.~Wang, and M.~Jordan, ``Learning transferable features with
   deep adaptation networks,'' in \emph{Proceedings of the 32nd International
   Conference on Machine Learning, {ICML} 2015, Lille, France}, 2015, pp.
   97--105.
-
-\bibitem{yang2007cross}
-J.~Yang, R.~Yan, and A.~G. Hauptmann, ``Cross-domain video concept detection
-  using adaptive svms,'' in \emph{Proceedings of the 15th international
-  conference on Multimedia}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2007,
-  pp. 188--197.
-
-\bibitem{aytar2011tabula}
-Y.~Aytar and A.~Zisserman, ``Tabula rasa: Model transfer for object category
-  detection,'' in \emph{Computer Vision (ICCV), 2011 IEEE International
-  Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2011, pp.
-  2252--2259.
 
 \bibitem{davis2009deep}
 J.~Davis and P.~Domingos, ``Deep transfer via second-order markov logic,'' in
@@ -141,5 +141,11 @@ C.~H. Lampert, H.~Nickisch, and S.~Harmeling, ``Learning to detect unseen
 \bibitem{griffin2007caltech}
 G.~Griffin, A.~Holub, and P.~Perona, ``Caltech-256 object category dataset,''
   2007.
+
+\bibitem{gehler2009feature}
+P.~Gehler and S.~Nowozin, ``On feature combination for multiclass object
+  classification,'' in \emph{Computer Vision, 2009 IEEE 12th International
+  Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2009, pp.
+  221--228.
 
 \end{thebibliography}
