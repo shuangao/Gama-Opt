@@ -15,11 +15,9 @@
 \citation{kuzborskij2013stability}
 \citation{cawley2006leave}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Positive transfer VS Negative transfer. Relying on unrelated priors could lead to negative transfer.\relax }}{1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Positive transfer VS Negative transfer. Relying on unrelated prior knowledge too much could lead to negative transfer.\relax }}{1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:neg}{{1}{1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Negative transfer may happen when we transfer prior knowledge $f'$ to target one. Points with different color represent different categories. The data distribution would change even for identical categories in different task. The red points denote the new category in target task. \relax }}{1}}
-\newlabel{fig:distribution}{{2}{1}}
 \citation{pan2010survey}
 \citation{tommasi2014learning}
 \citation{lim2012transfer}
@@ -34,6 +32,8 @@
 \citation{kuzborskij2013n}
 \citation{tommasi2010safety}
 \citation{cawley2006leave}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Negative transfer happens when we transfer prior knowledge $f'$ to target one. Points with different color represent different categories. The data distribution would change even for identical categories in different task. The new added category (red points) can greatly affect the data distribution in target task. \relax }}{2}}
+\newlabel{fig:distribution}{{2}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Related Works}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}Problem Statement}{2}}
 \citation{yang2007cross}
@@ -49,16 +49,16 @@
 \newlabel{eq:opt}{{2}{3}}
 \newlabel{eq:solution}{{4}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Optimize $\gamma $ and $\beta $}{3}}
-\newlabel{eq:train_loss}{{6}{3}}
 \citation{BoydCO}
 \citation{shalev2011pegasos}
+\newlabel{eq:train_loss}{{6}{4}}
 \newlabel{loss}{{7}{4}}
 \newlabel{eq:dual}{{8}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Analysis}{4}}
-\newlabel{subsec:analysis}{{\unhbox \voidb@x \hbox {III-C}}{4}}
 \newlabel{alg:1}{{\caption@xref {alg:1}{ on input line 1}}{4}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces $\gamma $ optimization\relax }}{4}}
 \newlabel{alg:1}{{1}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Analysis}{4}}
+\newlabel{subsec:analysis}{{\unhbox \voidb@x \hbox {III-C}}{4}}
 \newlabel{th:1}{{1}{4}}
 \citation{lampert2009learning}
 \citation{griffin2007caltech}
@@ -82,8 +82,6 @@
 \bibcite{Thrun96islearning}{5}
 \bibcite{Lu201514}{6}
 \bibcite{yang2007cross}{7}
-\bibcite{aytar2011tabula}{8}
-\bibcite{suykens1999least}{9}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Positive Transfer}{6}}
 \@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Overall Caltech to Caltech with different size of training set in target problem. 30 examples are randomly chosen from each class to train the source classifier and 30 examples from each class are chosen for test. \relax }}{6}}
 \newlabel{tab:C2C}{{II}{6}}
@@ -98,18 +96,20 @@
 \newlabel{fig:awa-b}{{3b}{7}}
 \newlabel{sub@fig:awa-b}{{(b)}{b}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Experiment results for 10 classes, AwA. Horse is used as the new category. \subref {fig:awa-a}\relax }}{7}}
+\newlabel{fig:awa}{{3}{7}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overall accuracy comparision with different baselines. }}}{7}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Comparision with MULTIpLE.}}}{7}}
-\newlabel{fig:awa}{{3}{7}}
 \newlabel{fig:a2c-a}{{4a}{7}}
 \newlabel{sub@fig:a2c-a}{{(a)}{a}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Experiment results for 10 classes, AwA. Horse is used as the new category. \subref {fig:a2c-a}\relax }}{7}}
+\newlabel{fig:a2c}{{4}{7}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overall accuracy comparision with different baselines. }}}{7}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Comparision with MULTIpLE.}}}{7}}
-\newlabel{fig:a2c}{{4}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Overall AwA to Caltech\relax }}{7}}
 \newlabel{tab:addlabel}{{IV}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces AwA leave class 6 as new category. 2345 as bad class\relax }}{7}}
+\bibcite{aytar2011tabula}{8}
+\bibcite{suykens1999least}{9}
 \bibcite{kuzborskij2013stability}{10}
 \bibcite{cawley2006leave}{11}
 \bibcite{pan2010survey}{12}
