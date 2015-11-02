@@ -15,24 +15,25 @@ Here we introduce the notations used in the rest of the paper. \hl{We use any le
   \caption{useful notations in this paper}
     \begin{tabular}{|c|L{7cm}|}
     \hline
-    $f'(x)$ & binary function for source task \\
+    $f'(x)$ & binary model for source task \\
     \hline
-    $f(x)$  & binary function for target task \\
+    $f(x)$  & binary model for target task \\
     \hline
     $\phi(x)$ &  function mapping the input sample into a high dimensional feature space. \\ \hline
-    $K(x,x)$ & kernel matrix with  $\phi(x_i) \cdot\phi(x_j)$ corresponding to its element $(i,j)$\\ \hline
+%    $K(x,x)$ & kernel matrix with  $\phi(x_i) \cdot\phi(x_j)$ corresponding to its element $(i,j)$\\ \hline
     $X$     & instance matrix with each row representing one instance \\\hline
-    $W $    & (N+1)-column hyperplane matrix for target task. Each column represents one hyperplane of a binary model \\\hline
-    $W'$    & hyperplane matrix for the source task \\\hline
-    $a' $   & the Lagrangian multiplier matrix for source problem. Each column represents a set of  \\\hline
-    $a $    & the Lagrangian multiplier matrix for target problem \\
+    $\boldsymbol{W} $    & (N+1)-column hyperplane matrix for target task. Each column represents one hyperplane of a binary model \\\hline
+    $\boldsymbol{W'}$    & hyperplane matrix for the source task \\\hline
+    $\boldsymbol{a'} $   & the Lagrangian multiplier matrix for source problem. Each column represents a set of  \\\hline
+    $\boldsymbol{a} $    & the Lagrangian multiplier matrix for target problem \\
     \hline
-    $b',b$  & the bias vector for source and target task \\
+    $\boldsymbol{b'},\boldsymbol{b}$  & the bias vector for source and target task \\
         \hline
-    $a_i,w_i$ & $i_{th}$ column of matrix $a$ and $w$\\\hline
-    $d_\gamma$ &  diagonal matrix with$\left[ {{\gamma _1},...,{\gamma _N}} \right]$ in its main diagonal\\\hline
-    $\beta$ & row vector $\left[ {{\beta _1},...,{\beta _N}} \right]$ to control the prior knowledge for the new category\\ \hline
+    $\boldsymbol{a_i}$ & $i_{th}$ column of matrix $\boldsymbol{a}$ \\ \hline
+%    $d_\gamma$ &  diagonal matrix with$\left[ {{\gamma _1},...,{\gamma _N}} \right]$ in its main diagonal\\\hline
+    $\boldsymbol{\beta}$ & row vector $\left[ {{\beta _1},...,{\beta _N}} \right]$ to control the prior knowledge for the new category\\ \hline
     $\varepsilon_{ny_i}$&loss parameter. $\varepsilon _{n{y_i}}=1$ if $n=y_i$ and 0 otherwise\\ \hline
+    $\psi$, $\psi^{-1}$ & $\psi$ is the modified kernel matrix for solving binary LS-SVM and $\psi^{-1}$ is the inverse matrix of $\psi$\\ \hline
     \end{tabular}%
   \label{tab:notation}%
 \end{table}%
@@ -47,7 +48,7 @@ Assume that, for our $(N+1)$-category target task, ${x} \in \mathcal{X}$ and ${y
 \end{equation*}
 Where $R({w_n})$ is the regularization term to guarantee good generalization performance and avoid overfitting. $\mathbf{Y}$ is a encoded label matrix so that $Y_{in}=1$ if $y_i=n$ and $-1$ otherwise.  
 
-In classic LS-SVM setting, the regularization term is set to $\frac{1}{2}\left\|w_n\right\|^2$ and the optimal $w_n=\phi(X)^T\alpha_n$ while the parameters $(\aleph_n,b_n)$ can be found by solving
+In classic LS-SVM setting, the regularization term is set to $\frac{1}{2}\left\|w_n\right\|^2$ and the optimal $w_n=\phi(X)^T\alpha_n$ while the parameters $(\alpha_n,b_n)$ can be found by solving
 \begin{equation}\label{eq:linear}
 \left[ {\begin{array}{*{20}{c}}
 {K(X,X) + \frac{1}{C}{\rm{I}}}&\mathbf{1}\\
@@ -63,26 +64,25 @@ In classic LS-SVM setting, the regularization term is set to $\frac{1}{2}\left\|
 Here $I$ is the identity matrix and $\mathbf{1}$ is a column vector with all its elements equal to 1.
 
 Now our task can be divided into two separate part: learning the $N$ overlapped categories and the new category. 
-\hl{We know that the source and target share $N$ categories.} From previous work \cite{yang2007cross}, the regularization term can be written as $\frac{1}{2}{{{\left\| {{w_n} - {\gamma _n}{{w'}_n}} \right\|}^2}}$. Here, $\gamma_n$ is the regularization parameter controlling the amount of transfer.
-\hl{For the task for new category}, we can use multi-source kernel learning strategy in \cite{tommasi2014learning} 
+As we know that the source and target share $N$ categories, from previous work \cite{yang2007cross}, the regularization term can be written as $\frac{1}{2}{{{\left\| {{w_n} - {\gamma _n}{{w'}_n}} \right\|}^2}}$. Here, $\gamma_n$ is the regularization parameter controlling the amount of transfer. $\gamma_n$ is expected to be big if the data distribution of the source and target are similar. Otherwise, $\gamma_n$ should be small or even negative to prevent negative transfer.  
+For learning the new category, we use multi-source kernel learning strategy from \cite{tommasi2014learning}, leveraging knowledge from multiple sources.  
 
-
-So the multi-class transfer problem can be solved by optimizing the following objective function:
-\begin{equation}\label{eq:opt}
+Therefore, our multi-class incremental transfer problem can be solved by optimizing the following objective function:
+\begin{equation}
 \begin{aligned}
 \textbf{min}\qquad {} & \frac{1}{2}\sum\limits_{n = 1}^N {{{\left\| {{w_n} - {\gamma _n}{{w'}_n}} \right\|}^2}}  + \frac{1}{2}{\left\| {{w_{N + 1}} - \sum\limits_{k = 1}^N {w{'_k}{\beta _k}} } \right\|^2}\\& \frac{C}{2}\sum\limits_{n = 1}^{N + 1} {\sum\limits_{i = 1}^l {e_{i,n}^2} }  \\
-\textbf{s.t.}\qquad {} &{e_{i,n}} = {Y_{i,n}} - \phi ({x_i}){w_n} - {b_n}
-\end{aligned}
+\textbf{s.t.}\qquad {} &{e_{i,n}} = {Y_{in}} - \phi ({x_i}){w_n} - {b_n}
+\end{aligned}\label{eq:opt}
 \end{equation}
 
-The closed-form of the optimal solution to  Eq. (\ref{eq:opt}) is:
+The the optimal solution to  Eq. (\ref{eq:opt}) is:
 \begin{equation*}
 \begin{array}{*{20}{c}}
 {{w_n} = {\gamma _n}{{w'}_n} + \sum\limits_i^l {{\alpha _{in}}{\phi(x_i)}} }&{n = 1,...,N}\\
 {{w_{N + 1}} = \sum\limits_k^N {{\beta _k}{{w'}_k}}  + \sum\limits_i^l {{\alpha _{i(N + 1)}}{\phi(x_i)}} }&{}
 \end{array}
 \end{equation*}
-Here $\alpha_{ij}$ is the element $(i,j)$ in $\boldsymbol{\alpha}$. The intuitive interpretation of the results above is that the hyperplane of the target problem is the linear combination of the prior knowledge (first part of the right side) and empirical knowledge from target task (second part of the right side).
+Here $\alpha_{ij}$ is the element $(i,j)$ in $\boldsymbol{\alpha}$. The intuitive interpretation of the result above is that the hyperplane of the target problem is the linear combination of the prior knowledge (first part of the right side) and empirical knowledge from target task (second part of the right side).
 
 Let $\psi$ denotes the first term of left-hand side in Eq. (\ref{eq:linear}) and let:
 \begin{equation}
@@ -109,78 +109,5 @@ We have:
  {\boldsymbol{\alpha} ''{d_r}}&{{\boldsymbol{\alpha} ''\boldsymbol{\beta ^T}}}
  \end{array}} \right]
 \end{equation}
-From Eq. (\ref{eq:solution}) we can see that, the solution of Eq. (\ref{eq:linear}) is completed once $\boldsymbol{\gamma}=\left[ \gamma_1,...,\gamma_N\right] $ and $\boldsymbol{\beta}$ are set.
+From Eq. (\ref{eq:solution}) we can see that, the solution of Eq. (\ref{eq:opt}) is completed once $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ are set.
 
-\subsection{Optimize $\gamma$ and $\beta$}
-\hl{introduce LOO error estimation. In this part, we introduce our method to estimate proper $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ that can prevent negative transfer.}
-From above, we can see that the hyperplane for the target problem is determined by $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$. Negative transfer happens when the model aggressively leverage over irrelevant prior knowledge, i.e. set a  large value to $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$. However, aggressive leverage over informative priors can improve the performance of the transfer model greatly. Inspired by some previous works \cite{tommasi2014learning} \cite{kuzborskij2013n}, we proposed \hl{our method} that can minimize the affect of negative transfer from unrelated priors.
-
-\hl{As we mentioned above, another important advantage of LS-SVM over the other model is that we can get unbiased LOO error in closed form} \cite{cawley2006leave}. The unbiased LOO estimation for sample $x_i$ can be written as:
-\begin{equation}
-{\hat Y_{i,n}} = {Y_{i,n}} - \frac{{{\alpha _{in}}}}{{\psi_{ii}^{ - 1}}}{\text{    for   }}n = 1,...,N + 1
-\end{equation}
-Here $\psi^{-1}$ is the inverse of matrix $\psi$ and  $\psi_{ii}^{-1}$ is its $ith$ diagonal element. 
-
-\hl{Let us call $\xi_i$ the empirical error of our multi-class prediction for example $x_i$, and $\xi_i$ can be defined as} \cite{crammer2002algorithmic}:
-\begin{equation}\label{eq:train_loss}
-\xi_i(\gamma,\beta) = \mathop {\max }\limits_{n \in \left\lbrace 1,...,N+1 \right\rbrace } {\left[ {1 - {\varepsilon _{n{y_i}}} + {{\hat Y}_{in}}\left( {\gamma ,\beta } \right) - {{\hat Y}_{i{y_i}}}\left( {\gamma ,\beta } \right)} \right]}
-\end{equation}
-Where $\varepsilon _{n{y_i}}=1$ if $n=y_i$ and 0 otherwise. $\xi_i(\gamma,\beta)>0$ if example $x_i$ is misclassified. The intuition behind this loss function is to enforce the distance between the true class and other classes to be at least 1.
-
-Then we define our objective function as:
-\begin{equation}\label{loss}
-\begin{aligned}
-& \textbf{min}
-& & \frac{{{\lambda _1}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\gamma _n}} \right\|}^2}}  + \frac{{{\lambda _2}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\beta _n}} \right\|}^2}}  + \sum\limits_{i = 1}^l {{\xi _i}}   \\
-& \textbf{s.t.}
-& & 1 - {\varepsilon _{n{y_i}}} + {\hat Y_{in}}\left( {\gamma ,\beta } \right) - {\hat Y_{i{y_i}}}\left( {\gamma ,\beta } \right) \le {\xi_i};\\
-& & &\lambda_1,\lambda_2 \ge 0
-\end{aligned}
-\end{equation}
-
-Here $\lambda_1$ and $\lambda_2$ are two regularization parameters to prevent overfitting. 
-From the objective function above we can see that, for certain $\lambda_1$ and $\lambda_2$, when the prior knowledge is unrelated and negative transfer happens, increasing $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ leads to larger punishment from both regularization and empirical error from target task. Decreasing the affect of prior knowledge reduces the loss of the objective function and eventually prevents negative transfer. Moreover, we also prove that this objective function can avoid negative transfer (for more details, see Theorem \ref{th:1}). On the other hand, if the prior knowledge is related, even though, increasing $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ leads to larger punishment, it also leads to smaller empirical error on the target problem. So the algorithm compromises between the prior and empirical knowledge. \hl{Besides, there are some other properties that make our method efficient.}(see Section \ref{subsec:analysis})
-
-
-By adding a dual set of variables, one for each constraint, we get the Lagrangian of the optimization problem:
-\begin{equation}\label{eq:dual}
-\begin{aligned}
- \textbf{max}\qquad {}& L\left( {\gamma ,\beta ,\xi ,\eta } \right) =\\
- &\frac{{{\lambda _1}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\gamma _n}} \right\|}^2}}  + \frac{{{\lambda _2}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\beta _n}} \right\|}^2}}  + \sum\limits_{i = 1}^l {{\xi _i}} \\
-   &+ \sum\limits_{i,n} {{\eta _{i,n}}\left[ {1 - {\varepsilon _{n{y_i}}} + {{\hat Y}_{in}}\left( {\gamma ,\beta } \right) - {{\hat Y}_{i{y_i}}}\left( {\gamma ,\beta } \right) - {\xi _i}} \right]}  \\
- \textbf{s.t.} \qquad {} & \forall i,n \quad {} {\eta _{i,n}} \ge 0
-\end{aligned}
-\end{equation}
-
-The problem of Eq. \eqref{eq:dual} is a non-differentiable strongly convex problem. The sub-gradient of it can be written as:
-\begin{equation*}
-{\Delta _\gamma }=\begin{cases}
-\boldsymbol{0}&{y_i}=n\\
-\left[ {0,..,\frac{{\alpha ''}_{in}}{\psi _{ii}^{ - 1}},.., - \frac{{\alpha ''}_{i{y_i}}}{\psi _{ii}^{ - 1}},..,0} \right]&{y_i},n = 1,...N\\
-\left[ {0,..,\frac{{\alpha ''}_{in}}{\psi _{ii}^{ - 1}},..,0} \right]&{y_i} = N + 1;n = 1,...N\\
-\left[ {0,.., - \frac{{\alpha ''}_{i{y_i}}}{\psi _{ii}^{ - 1}},..,0} \right]&\text{otherwise}
-\end{cases}
-\end{equation*}
-\begin{equation*}
-{\Delta _\beta }=\begin{cases}
- - \sum {{{\alpha ''}_{ik}}{\beta _k}} &{y_i} = N + 1;n = 1,...N\\
- \sum {{{\alpha ''}_{ik}}{\beta _k}} &{y_i} = 1,..N;n = N+1\\
-\boldsymbol{0}&\text{otherwise}\\
-\end{cases}
-\end{equation*}
-To obtain the optimal values for the problem above, we introduce our method \hl{using sub-gradient descent }\cite{BoydCO} and summarize it in Alg. \ref{alg:1}. 
-\input{agl1.tex}
-
-\subsection{Analysis}\label{subsec:analysis}
-\hl{In this part, we mainly discuss our method in two aspects: convergence analysis and mathermatical proof of preventing negative transfer.} 
-
-\hl{Convergence analysis}
-The primal problem \eqref{loss} becomes the strongly convex problem by adding the L2 regularization terms. Optimizing the strongly convex problem can lead to the following error bound:
-\input{theorem2.tex}
-
-\hl{Superior bound analysis}
-\input{theorem.tex}
-
-When setting $\gamma=\beta = \mathbf{0}$, we don't utilize any knowledge from previous task (see Eq. \eqref{eq:opt}). From Theorem \ref{th:1} we can conclude \hl{our method can always outperform the method learning directly.}
-
-\hl{discuss $\lambda$}

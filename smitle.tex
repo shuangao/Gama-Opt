@@ -1,0 +1,74 @@
+In this section, we introduce the algorithm SMITLe we proposed, including optimizing the two transfer parameters $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ and theoretically analyze the performance of our algorithm.
+\subsection{Optimizing $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$}
+In this part, we introduce our method to estimate proper $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ that can prevent negative transfer. We use LOO error for parameter estimation. 
+
+From above, we can see that the hyperplane for the target problem is determined by $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$. Negative transfer happens when the model aggressively leverage over irrelevant prior knowledge, i.e. set a  large value to $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$. However, aggressive leverage over informative priors can improve the performance of the transfer model greatly. Inspired by some previous works \cite{tommasi2014learning} \cite{kuzborskij2013n}, we proposed \hl{our method} that can minimize the affect of negative transfer from unrelated priors.
+
+\hl{As we mentioned above, another important advantage of LS-SVM over the other model is that we can get unbiased LOO error in closed form} \cite{cawley2006leave}. The unbiased LOO estimation for sample $x_i$ can be written as:
+\begin{equation}
+{\hat Y_{i,n}} = {Y_{i,n}} - \frac{{{\alpha _{in}}}}{{\psi_{ii}^{ - 1}}}{\text{    for   }}n = 1,...,N + 1
+\end{equation}
+Here $\psi^{-1}$ is the inverse of matrix $\psi$ and  $\psi_{ii}^{-1}$ is its $ith$ diagonal element. 
+
+\hl{Let us call $\xi_i$ the empirical error of our multi-class prediction for example $x_i$, and $\xi_i$ can be defined as} \cite{crammer2002algorithmic}:
+\begin{equation}\label{eq:train_loss}
+\xi_i(\gamma,\beta) = \mathop {\max }\limits_{n \in \left\lbrace 1,...,N+1 \right\rbrace } {\left[ {1 - {\varepsilon _{n{y_i}}} + {{\hat Y}_{in}}\left( {\gamma ,\beta } \right) - {{\hat Y}_{i{y_i}}}\left( {\gamma ,\beta } \right)} \right]}
+\end{equation}
+Where $\varepsilon _{n{y_i}}=1$ if $n=y_i$ and 0 otherwise. $\xi_i(\gamma,\beta)>0$ if example $x_i$ is misclassified. The intuition behind this loss function is to enforce the distance between the true class and other classes to be at least 1.
+
+Then we define our objective function as:
+\begin{equation}\label{loss}
+\begin{aligned}
+& \textbf{min}
+& & \frac{{{\lambda _1}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\gamma _n}} \right\|}^2}}  + \frac{{{\lambda _2}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\beta _n}} \right\|}^2}}  + \sum\limits_{i = 1}^l {{\xi _i}}   \\
+& \textbf{s.t.}
+& & 1 - {\varepsilon _{n{y_i}}} + {\hat Y_{in}}\left( {\gamma ,\beta } \right) - {\hat Y_{i{y_i}}}\left( {\gamma ,\beta } \right) \le {\xi_i};\\
+& & &\lambda_1,\lambda_2 \ge 0
+\end{aligned}
+\end{equation}
+
+Here $\lambda_1$ and $\lambda_2$ are two regularization parameters to prevent overfitting. 
+From the objective function above we can see that, for certain $\lambda_1$ and $\lambda_2$, when the prior knowledge is unrelated and negative transfer happens, increasing $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ leads to larger punishment from both regularization and empirical error from target task. Decreasing the affect of prior knowledge reduces the loss of the objective function and eventually prevents negative transfer. Moreover, we also prove that this objective function can avoid negative transfer (for more details, see Theorem \ref{th:1}). On the other hand, if the prior knowledge is related, even though, increasing $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ leads to larger punishment, it also leads to smaller empirical error on the target problem. So the algorithm compromises between the prior and empirical knowledge. \hl{Besides, there are some other properties that make our method efficient.}(see Section \ref{subsec:analysis})
+
+
+By adding a dual set of variables, one for each constraint, we get the Lagrangian of the optimization problem:
+\begin{equation}\label{eq:dual}
+\begin{aligned}
+ \textbf{max}\qquad {}& L\left( {\gamma ,\beta ,\xi ,\eta } \right) =\\
+ &\frac{{{\lambda _1}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\gamma _n}} \right\|}^2}}  + \frac{{{\lambda _2}}}{2}\sum\limits_{n = 1}^N {{{\left\| {{\beta _n}} \right\|}^2}}  + \sum\limits_{i = 1}^l {{\xi _i}} \\
+   &+ \sum\limits_{i,n} {{\eta _{i,n}}\left[ {1 - {\varepsilon _{n{y_i}}} + {{\hat Y}_{in}}\left( {\gamma ,\beta } \right) - {{\hat Y}_{i{y_i}}}\left( {\gamma ,\beta } \right) - {\xi _i}} \right]}  \\
+ \textbf{s.t.} \qquad {} & \forall i,n \quad {} {\eta _{i,n}} \ge 0
+\end{aligned}
+\end{equation}
+
+The problem of Eq. \eqref{eq:dual} is a non-differentiable strongly convex problem. The sub-gradient of it can be written as:
+\begin{equation*}
+{\Delta _\gamma }=\begin{cases}
+\boldsymbol{0}&{y_i}=n\\
+\left[ {0,..,\frac{{\alpha ''}_{in}}{\psi _{ii}^{ - 1}},.., - \frac{{\alpha ''}_{i{y_i}}}{\psi _{ii}^{ - 1}},..,0} \right]&{y_i},n = 1,...N\\
+\left[ {0,..,\frac{{\alpha ''}_{in}}{\psi _{ii}^{ - 1}},..,0} \right]&{y_i} = N + 1;n = 1,...N\\
+\left[ {0,.., - \frac{{\alpha ''}_{i{y_i}}}{\psi _{ii}^{ - 1}},..,0} \right]&\text{otherwise}
+\end{cases}
+\end{equation*}
+\begin{equation*}
+{\Delta _\beta }=\begin{cases}
+ - \sum {{{\alpha ''}_{ik}}{\beta _k}} &{y_i} = N + 1;n = 1,...N\\
+ \sum {{{\alpha ''}_{ik}}{\beta _k}} &{y_i} = 1,..N;n = N+1\\
+\boldsymbol{0}&\text{otherwise}\\
+\end{cases}
+\end{equation*}
+To obtain the optimal values for the problem above, we introduce our method \hl{using sub-gradient descent }\cite{BoydCO} and summarize it in Alg. \ref{alg:1}. 
+\input{agl1.tex}
+
+\subsection{Analysis}\label{subsec:analysis}
+\hl{In this part, we mainly discuss our method in two aspects: convergence analysis and mathermatical proof of preventing negative transfer.} 
+
+\hl{Convergence analysis}
+The primal problem \eqref{loss} becomes the strongly convex problem by adding the L2 regularization terms. Optimizing the strongly convex problem can lead to the following error bound:
+\input{theorem2.tex}
+
+\input{theorem.tex}
+
+When setting $\gamma=\beta = \mathbf{0}$, we don't utilize any knowledge from previous task (see Eq. \eqref{eq:opt}). From Theorem \ref{th:1} we can conclude \hl{our method can always outperform the method learning directly.}
+
+\hl{discuss $\lambda$}
