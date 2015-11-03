@@ -1,4 +1,4 @@
-In this section, we show empirical results of our algorithm on different transferring situations on two datasets: AwA\footnote{The features of AwA dataset is available from http://attributes.kyb.tuebingen.mpg.de/} \cite{lampert2009learning} and Caltech-256\footnote{Images for Caltech-256 is available from http://www.vision.caltech.edu/Image\_Datasets/Caltech256/} \cite{griffin2007caltech}. We design the following \hl{3 sets of experiments: learning from informative prior (positive transfer), unrelated prior (negative transfer) and mixed prior (negative transfer), } to show the effectiveness of our algorithm.
+In this section, we show empirical results of our algorithm on different transferring situations on two datasets: AwA\footnote{The features of AwA dataset is available from http://attributes.kyb.tuebingen.mpg.de/} \cite{lampert2009learning} and Caltech-256\footnote{Images for Caltech-256 is available from http://www.vision.caltech.edu/Image\_Datasets/Caltech256/} \cite{griffin2007caltech}. In real world applications, there are three situations when we transfer the knowledge from one image database to another. Two extreme situations consist in transferring knowledge from either highly related source task (positive transfer), or unrelated source task (negative transfer). The third and the most common one is the intermediate case where only some of categories in the source are related and helpful. We design three sets of experiment based on these 3 situations, comparing our algorithm with the baselines to show its effectiveness.
 \subsection{Dataset}
 Caltch-256 contains 30607 images from 256 categories. We select the following 10 categories: \textit{bat, bear, dolphin, giraffe, gorilla, horse, leopard, raccoon, skunk, zebra}, containing 1387 images, as our dataset.
 
@@ -22,20 +22,21 @@ We select the following 3 methods as our transfer baselines. The general propert
 
 \textbf{MULTIpLE \cite{kuzborskij2013n}:} The basic setting of this method is similar like ours. It is designed to balance the performance between learning the new category and preserving the model from prior knowledge.
 
-For all the experiments in this section, we used kernel averaging \cite{gehler2009feature}, computing the average of RBF kernels over the available features on RBF hyperparameter $\{2^{-5},2^{-4},...,2^8\}$. The penalty parameter $C$ is tuned via cross-validation on $\{10^{-5},10^{-4},...,10^8\}$ and the optimal value is reused for all the algorithms.
+For all the experiments in this section, we adopt the same strategy as \cite{kuzborskij2013n} and \cite{tommasi2014learning}, using kernel averaging \cite{gehler2009feature} to compute the average of RBF kernels over the available features on RBF hyperparameter $\{2^{-5},2^{-4},...,2^8\}$. The penalty parameter $C$ is tuned via cross-validation on $\{10^{-5},10^{-4},...,10^8\}$ and the optimal value is reused for all the algorithms.
+Two transfer regularization parameters $\lambda1$ and $\lambda2$ are also set via cross-validation on $\{2^{-3},2^{-2},...,2^2\}$.
 
-\subsection{Transfer the knowledge from highly related knowledge}
-
-In MITL, the categories in both source and target task are drawn from the same distribution. Despite the affect of the new added category, transferring knowledge from prior knowledge can be considered as positive transfer. We perform the experiment under this scenario on both AwA and Caltech. On each dataset, we iteratively choose one category as the new category and run multiple times to get the average performance of each algorithm. The results of these two datasets are reported in Table \ref{tab:C2C} and Table \ref{tab:A2A}. From the result we can see that, in Caltech experiment, our algorithm consistently outperforms all the baselines even better than Batch.
+\subsection{Transfer the knowledge from related source}
+When the knowledge of the source task is highly related to the target one, the data distributions of these two tasks should be similar. 
+We perform the experiment under this setting on both AwA and Caltech. For each dataset, we split the data into two sets. One is treated as the source dataset to train the source model and another is treated as the target dataset for training and testing. We iteratively choose one category as the new category and run the experiment 10 times to get the average performance of each algorithm. The results of the two datasets are reported in Table \ref{tab:C2C} and Table \ref{tab:A2A}. From the result we can see that, in Caltech experiment, our algorithm consistently outperforms all the baselines (even better than Batch method). In AwA dataset, Source+1 outperforms SMITLe when the training size is 5. As we increase the training size, the accuracy of SMITLe increases and outperforms Source+1.
 
 To illustrate the detail performance of our algorithm, we select the experiment result on AwA dataset where horse is chosen as the new category for further explanation. In Figure \ref{fig:awa-a}, we show the average performances of different methods on different training size for 10 experiments. We can observe that, as the training size increases, our method can even outperforms the batch method.
-In Figure \ref{fig:awa-b} we provide values of $\gamma$ and $\beta$ compared with the parameters of the runner-up transfer algorithm MULTIpLE. We can see that for transfer knowledge between identical categories, MULTIpLE fixes the transfer parameter ($\gamma$) to be 1 while our method sets greater weights for related prior knowledge. The same phenomenon is observed for the transfer parameter $\beta$. By exploiting the positive prior knowledge more aggressively, SMITLe is able to leverage the prior knowledge and outperforms other methods. In Table \ref{tab:A2A}, \hl{Source+1 outperforms SMITLe when the training size is small. This could be due to the noisy examples. As we increase the training size, the accuracy of SMITLe increases and outperforms Source+1. }
+In Figure \ref{fig:awa-b} we provide values of $\gamma$ and $\beta$ compared with the parameters of the runner-up transfer algorithm MULTIpLE. We can see that for transfer knowledge between identical categories, MULTIpLE fixes the transfer parameter ($\gamma$) to be 1 while our method sets greater weights for related prior knowledge. The same phenomenon is observed for the transfer parameter $\beta$. By exploiting the positive prior knowledge more aggressively, SMITLe is able to leverage the prior knowledge and outperforms other methods.
 
 
 \begin{figure*}
 \centering
 \subfloat[Overall accuracy comparision with different baselines. ]{\includegraphics[scale=.4]{fig/A2A_horse.eps}\label{fig:awa-a}}
-\subfloat[Comparision with MULTIpLE.] {\includegraphics[scale=0.4]{fig/A2A_gama.eps}\label{fig:awa-b}}
+\subfloat[Comparision with MULTIpLE. MULTIpLE sets transfer the prior knowledge] {\includegraphics[scale=0.4]{fig/A2A_gama.eps}\label{fig:awa-b}}
 
 \caption{Experiment results for 10 classes, AwA. Horse is used as the new category. \protect\subref{fig:awa-a}}
 \label{fig:awa}
@@ -86,9 +87,9 @@ In Figure \ref{fig:awa-b} we provide values of $\gamma$ and $\beta$ compared wit
 
 
 \subsection{Transfer the knowledge from unrelated knowledge}
-In this section, we show how our method performs in transferring knowledge between two different datasets, from AwA to Caltech. Following the settings in previous section, the prior models are trained from AwA dataset and we iteratively select one category as the new one, running multiple times to get the average results for all the algorithms. We show the average performance of each algorithm in Table \ref{tab:A2C}. 
+In this section, we show how our method performs in transferring knowledge between two different datasets, from AwA to Caltech. Following the settings in previous section, the prior models are trained from AwA dataset and we iteratively select one category as the new one, running multiple times to get the average results for all the algorithms. We show the average performance of each algorithm in Table \ref{tab:A2C}. We can see that negative transfer does happen when transferring the knowledge from AwA to Caltech for all the algorithms except for ours. From the performance of Source+1, we can see that applying the source knowledge directly leads to poor performance. We can conclude that even though these two datasets share some categories, the data distribution of the feature representation for the same category is not consistent which eventually leads to negative transfer. 
 
-Still we take the experiment where horse is considered as the new category to see the detail performance of each algorithm. In Figure \ref{fig:a2c-a} we can see that, the accuracy of Source+1 is much lower than no transfer, which indicates that the knowledge from prior AwA is unrelated to Caltech dataset. From here we can see that, not surprisingly, the accuracy of SMITLe shows similar accuracy to the no transfer baseline, while other methods suffer from negative transfer and perform even worse than no transfer baseline.  In Figure \ref{fig:awa-b} we show the parameters learned for each classes in SMITLe in comparison with MULTIpLE. We can see that, when the prior knowledge is unrelated, SMITLe resists utilizing the prior knowledge and therefore shows almost identical accuracy to the no transfer baseline.
+Still we take the experiment where horse is considered as the new category to see the detail performance of each algorithm and show the it in Figure \ref{fig:awa} . From here we can see that, not surprisingly, the accuracy of SMITLe shows similar accuracy to the no transfer baseline, while other methods suffer from negative transfer and perform even worse than no transfer baseline. In Figure \ref{fig:awa-b} we show the parameters learned for each classes in SMITLe in comparison with MULTIpLE. We can see that, when the prior knowledge is unrelated, SMITLe resists utilizing the prior knowledge and therefore shows almost identical accuracy to the no transfer baseline.
 %\begin{figure*}
 %\includegraphics[width=\textwidth,height=5cm]{fig/A2C_RBF_PHOG.eps}
 %\caption{Transferring from AwA to Caltech-256.}
@@ -99,7 +100,7 @@ Still we take the experiment where horse is considered as the new category to se
 	\centering
 	\subfloat[Overall accuracy comparision with different baselines. ]{\includegraphics[scale=.4]{fig/A2C_horse.eps}\label{fig:a2c-a}}
 	\subfloat[Comparision with MULTIpLE.] {\includegraphics[scale=0.4]{fig/A2C_gama.eps}\label{fig:a2c-b}}
-	\caption{Experiment results for 10 classes, AwA. Horse is used as the new category. \protect\subref{fig:a2c-a}}
+	\caption{Experiment results for 10 classes, AwA. Horse is used as the new category.}
 	\label{fig:a2c}
 \end{figure*}
 
@@ -123,7 +124,7 @@ Still we take the experiment where horse is considered as the new category to se
 \end{table}%
 
 \subsection{mixed}
-
+In real applications, extreme situation where the knowledge is highly related/unrelated, is rare. 
 \begin{figure*}
   \centering
   \subfloat[]{    \includegraphics[width=0.18\textwidth]{fig/A2A_bad/A2A_bad3.eps}  }
