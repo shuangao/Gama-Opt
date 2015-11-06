@@ -1,10 +1,10 @@
-SMITLe works in the following scenario. There is a image dataset (source data) containing $N$ categories and a classifier trained from this dataset to distinguish these $N$ categories. This (source) classifier and the features used to learn it is publicly accessible while the dataset itself is private (unknown distribution).  Now we collect our own image dataset (target data) coming from $N+1$ categories. This target dataset consists of $N$ identical categories to the source data and one new category related to the previous $N$ categories. In order to train a new classifier for our new task, we would expect our classifier to get improved performance with respect to 
+SMITLe works in the following scenario. There is a image dataset (source data) containing $N$ categories and a set of binary classifiers are trained from this dataset to distinguish these $N$ categories. However, we can only access to the classifiers rather than the data itself. Now we collect our own image dataset (target task) coming from $N+1$ categories. This target dataset consists of $N$ identical categories to the source data and one new category related to the previous $N$ categories. In order to solve our new task, we would expect our classifier to get improved performance with respect to 
 \begin{itemize}
-\item Maximize positive transfer. If these two tasks are highly related, our algorithm should transfer the prior knowledge aggressively. In some cases where the prior knowledge is very informative, the final decision of the classifier should be mainly rely on prior knowledge.
-\item \hl{Minimize negative transfer. If the knowledge between these two task is unrelated, the algorithm should be able to dispose the unrelated knowledge autonomously. In the worst case, none of the prior knowledge is related and the classifier should be as good as classifier trained merely from target data.}
+\item Exploiting knowledge from related source models. If these two tasks are related, SMITLe should transfer the prior knowledge aggressively. In some cases where the prior knowledge is very related and training size of the target task is small, the final decision of the classifier could be mainly rely on the decision from the source models.
+\item Disposing unrelated knowledge. If the knowledge between these two tasks is unrelated, the algorithm should be able to distinguish and dispose the unrelated knowledge autonomously. In the worst case, none of the prior knowledge is related and SMITLe should show similar performance as the model trained merely from target data.
 \end{itemize}
 
-\hl{In this paper, we use LS-SVM as the classifier for the multi-class transfer problem. In the following, we briefly introduce the mathematical setting of our problem and show   }
+In this paper, we use LS-SVM as the classifier for the multi-class incremental transfer problem. In the following, we briefly introduce the mathematical setting of our problem.
 
 \subsection{LS-SVM Setting and Definition}
 Here we introduce the notations used in the rest of the paper. \hl{We use any letter with apostrophe to denote the information from the source data, e.g. if $f(x)$ denotes the model for the target task, $f'(x)$ denotes the model for the source one.}
@@ -15,16 +15,14 @@ Here we introduce the notations used in the rest of the paper. \hl{We use any le
   \caption{useful notations in this paper}
     \begin{tabular}{|c|L{7cm}|}
     \hline
-    $f'(x)$ & binary model for source task \\
-    \hline
-    $f(x)$  & binary model for target task \\
+    $f',f$ & binary model for source and task task respectively\\
     \hline
     $\phi(x)$ &  function mapping the input sample into a high dimensional feature space. \\ \hline
 %    $K(x,x)$ & kernel matrix with  $\phi(x_i) \cdot\phi(x_j)$ corresponding to its element $(i,j)$\\ \hline
     $X$     & instance matrix with each row representing one instance \\\hline
-    $\boldsymbol{W} $    & (N+1)-column hyperplane matrix for target task. Each column represents one hyperplane of a binary model \\\hline
-    $\boldsymbol{W'}$    & hyperplane matrix for the source task \\\hline
-    $\boldsymbol{a'} $   & the Lagrangian multiplier matrix for source problem. Each column represents a set of  \\\hline
+    $\boldsymbol{W} $    & (N+1)-column hyperplane matrix for target task; each column represents one hyperplane of a binary model \\\hline
+    $\boldsymbol{W'}$    & N-column hyperplane matrix for the source task \\\hline
+    $\boldsymbol{a'} $   & the Lagrangian multiplier matrix for source problem. Each column represents the the Lagrangian multipliers for a binary model  \\\hline
     $\boldsymbol{a} $    & the Lagrangian multiplier matrix for target problem \\
     \hline
     $\boldsymbol{b'},\boldsymbol{b}$  & the bias vector for source and target task \\
@@ -40,7 +38,7 @@ Here we introduce the notations used in the rest of the paper. \hl{We use any le
 
  
 
-Assume that, for our $(N+1)$-category target task, ${x} \in \mathcal{X}$ and ${y} \in \mathcal{Y}=\left\{1,2,...,N+1\right\}$ are the input vector and output for the learning task respectively. Meanwhile, we have a set of binary linear classifiers $f'_n(x)=\phi(x)w_n'+b_n'$, for $n=1,...,N$ trained from an unknown distribution with One-Versus-All (OVA) strategy.  Now we want to learn a set of new classifier $f_n(x)=\phi(x)w_n+b_n, n=1,...,N+1$, so that example $x$ is assigned to the category $j$ if $j \equiv \arg {\max _{n = 1,...,N+1}}\left\{{f_n}(x)\right\}$. In LS-SVM, the solution of the model parameters $(w_n,b_n)$ can be found by solving the following optimization problem:
+Assume that, for our $(N+1)$-category target task, ${x} \in \mathcal{X}$ and ${y} \in \mathcal{Y}=\left\{1,2,...,N+1\right\}$ are the input vector and output for the learning task respectively. Meanwhile, we have a set of binary linear classifiers $f'_n(x)=\phi(x)w_n'+b_n'$, for $n=1,...,N$ trained from an unknown distribution with One-Versus-All (OVA) strategy.  Now we want to learn a set of classifiers $f_n(x)=\phi(x)w_n+b_n, n=1,...,N+1$ for our new task, so that example $x$ is assigned to the category $j$ if $j \equiv \arg {\max _{n = 1,...,N+1}}\left\{{f_n}(x)\right\}$. In LS-SVM, the solution of the model parameters $(w_n,b_n)$ can be found by solving the following optimization problem:
 \begin{equation*}
 \begin{aligned}
 \textbf{min} && R({w_n}) + \frac{C}{2}\sum\limits_i^l {({Y_{i,n}} - \phi ({x_i}){w_n} - {b_n})^2} \\
@@ -106,8 +104,8 @@ Y\\
 We have:
 \begin{equation}\label{eq:solution}
  \boldsymbol{\alpha}  = \boldsymbol{\alpha} ' - \left[ {\begin{array}{*{20}{c}}
- {\boldsymbol{\alpha} ''{d_r}}&{{\boldsymbol{\alpha} ''\boldsymbol{\beta ^T}}}
+ {\boldsymbol{\alpha} ''\boldsymbol{d_{\gamma}}}&{{\boldsymbol{\alpha} ''\boldsymbol{\beta ^T}}}
  \end{array}} \right]
 \end{equation}
-From Eq. (\ref{eq:solution}) we can see that, the solution of Eq. (\ref{eq:opt}) is completed once $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ are set.
+Here $\boldsymbol{d_{\gamma}}$ is a diagonal matrix with $\{\gamma_i\}_{i=1,...,N}$ in its main diagonal. From Eq. (\ref{eq:solution}) we can see that, the solution of Eq. (\ref{eq:opt}) is completed once $\boldsymbol{\gamma}$ and $\boldsymbol{\beta}$ are set.
 
