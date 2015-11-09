@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  6 NOV 2015 11:19
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  9 NOV 2015 11:47
 entering extended mode
 **gama_opt.tex
 (D:\LaTex_Files\Gama-Opt\gama_opt.tex
@@ -404,23 +404,22 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (D:\LaTex_Files\Gama-Opt\gama_intro.tex
+Underfull \hbox (badness 3138) in paragraph at lines 5--11
+[]\OT1/ptm/m/n/10 Transferring the knowl-edge be-tween dif-fer-ent im-age
+ []
+
 <fig/negative.png, id=1, 353.06906pt x 268.75406pt>
 File: fig/negative.png Graphic file (type png)
  <use fig/negative.png>
-Package pdftex.def Info: fig/negative.png used on input line 13.
+Package pdftex.def Info: fig/negative.png used on input line 14.
 (pdftex.def)             Requested size: 176.53409pt x 134.3767pt.
 
 <fig/domain.jpg, id=2, 382.5492pt x 192.84045pt>
 File: fig/domain.jpg Graphic file (type jpg)
  <use fig/domain.jpg>
-Package pdftex.def Info: fig/domain.jpg used on input line 18.
+Package pdftex.def Info: fig/domain.jpg used on input line 19.
 (pdftex.def)             Requested size: 153.01695pt x 77.13481pt.
-
-Underfull \hbox (badness 3138) in paragraph at lines 5--21
-[]\OT1/ptm/m/n/10 Transferring the knowl-edge be-tween dif-fer-ent im-age
- []
-
-[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
  <D:/LaTex_Files/Gama-Opt/fig/negative.png>]) (D:\LaTex_Files\Gama-Opt\gama_wor
@@ -951,10 +950,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5008 strings out of 493921
- 78038 string characters out of 3152883
- 247732 words of memory out of 3000000
- 8167 multiletter control sequences out of 15000+200000
+ 5012 strings out of 493921
+ 78079 string characters out of 3152883
+ 247768 words of memory out of 3000000
+ 8171 multiletter control sequences out of 15000+200000
  45438 words of font info for 90 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
  44i,21n,47p,1327b,767s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -973,7 +972,7 @@ mr7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX 2.9
 fonts/cm/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/MiKTeX 2
 .9/fonts/type1/urw/times/utmbi8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmr8
 a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on gama_opt.pdf (9 pages, 521257 bytes).
+Output written on gama_opt.pdf (9 pages, 521571 bytes).
 PDF statistics:
  221 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
