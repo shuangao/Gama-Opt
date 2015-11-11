@@ -1,4 +1,4 @@
-In this section, we show empirical results of our algorithm on different transferring situations on two datasets: AwA\footnote{The features of AwA dataset is available from http://attributes.kyb.tuebingen.mpg.de/} \cite{lampert2009learning} and Caltech-256\footnote{Images for Caltech-256 is available from http://www.vision.caltech.edu/Image\_Datasets/Caltech256/} \cite{griffin2007caltech}. In real world applications, there are three situations when we transfer the knowledge from one image database to another. Two extreme situations consist in transferring knowledge from either highly related source task (positive transfer), or unrelated source task (negative transfer). The third and the most common one is the intermediate case where only some of categories in the source are related and helpful. We design three sets of experiment, called positive, negative and mixed transfer experiment respectively, based on these 3 situations, comparing our algorithm with the baselines to show its effectiveness.
+In this section, we show empirical results of our algorithm on different transferring situations on two datasets: AwA\footnote{The features of AwA dataset is available from http://attributes.kyb.tuebingen.mpg.de/} \cite{lampert2009learning} and Caltech-256\footnote{Images for Caltech-256 is available from http://www.vision.caltech.edu/Image\_Datasets/Caltech256/} \cite{griffin2007caltech}. In real world applications, there are three situations when we transfer the knowledge from one image database to another. Two extreme situations consist in transferring knowledge from either highly related source task (positive transfer), or unrelated source task (negative transfer). The third and the most common one is the intermediate (mixed) case where only some of categories in the source are related and helpful. We design three sets of experiment, called positive, negative and mixed transfer experiment respectively, based on these 3 situations, comparing our algorithm with the baselines to show its effectiveness.
 \subsection{Dataset}
 Caltch-256 contains 30,607 images from 256 categories. We select the following 10 categories: \textit{bat, bear, dolphin, giraffe, gorilla, horse, leopard, raccoon, skunk, zebra}, containing 1387 images, as our dataset.
 
@@ -26,8 +26,8 @@ For all the experiments in this section, we adopt the same strategy as \cite{kuz
 Two transfer regularization parameters $\lambda1$ and $\lambda2$ are also set via cross-validation on $\{10^{-3},10^{-2},...,10\}$ respectively.
 
 \subsection{Positive transfer: transferring from related sources}
-When the knowledge of the source task is related to the target one, the data of these two tasks should be drawn from the same distribution. 
-We perform the experiment under this setting on both AwA and Caltech. For each dataset, we split the data into two sets. One is treated as the source dataset to train the source model and another is treated as the target dataset for training and testing. We iteratively choose one category as the new category and run the experiment 10 times to get the average performance of each algorithm. The results of the two datasets are reported in Table \ref{tab:C2C} and Table \ref{tab:A2A}. From the result we can see that, in Caltech experiment, our algorithm consistently outperforms all the baselines (even better than Batch method). In AwA dataset, Source+1 outperforms SMITLe when the training size is 5. As we increase the training size, the accuracy of SMITLe increases and outperforms Source+1.
+In the extreme case, where the knowledge of the source task is related to the target one, the data of these two tasks can be drawn from the same distribution. 
+We perform tow experiments under this setting on both AwA and Caltech. For each dataset, we split the data into two sets. One is treated as the source dataset to train the source model and another is treated as the target dataset for training and testing. We iteratively choose one category as the new category and run the experiment 10 times to get the average performance of each algorithm. The results of the two experiments are reported in Table \ref{tab:C2C} and Table \ref{tab:A2A}. From the results we can see that, in Caltech experiment, our algorithm consistently outperforms all the baselines (even better than Batch method). In AwA dataset, Source+1 outperforms SMITLe when the training size is 5. As we increase the training size, the accuracy of SMITLe increases and outperforms Source+1.
 
 To illustrate the detail performance of our algorithm, we select the experiment result on AwA dataset where horse is chosen as the new category for further explanation. In Figure \ref{fig:awa-a}, we show the average performances of different methods on different training size for 10 experiments. We can observe that, as the training size increases, our method can even outperforms the batch method.
 In Figure \ref{fig:awa-b} we provide values of $\gamma$ and $\beta$ compared with the parameters of the runner-up transfer algorithm MULTIpLE. We can see that for transfer knowledge between identical categories, MULTIpLE fixes the transfer parameter ($\gamma$) to be 1 while our method sets greater weights for related prior knowledge. By exploiting the positive prior knowledge more aggressively, SMITLe is able to leverage the prior knowledge and outperforms other methods. For the transfer parameter $\beta$ we can see that MULTIpLE tends to keep $\beta$ greater than 0 and SMITLe works more intuitively, setting positive weight for related categories(giraffe, zebra and bear etc.) and small or even negative weight for unrelated categories (bat, dolphin and skunk etc.).
@@ -72,11 +72,11 @@ In Figure \ref{fig:awa-b} we provide values of $\gamma$ and $\beta$ compared wit
      size per category    & 5     & 10    & 15    & 20 \\
     \midrule
     No transfer &         23.52  &         26.79  &         29.60  &         31.50  \\
-    Source+1    &         \textbf{39.00 } &         \textbf{39.34 } &         39.62 &         39.74  \\
+    Source+1    &         \textbf{ 39.00 } &         \textbf{ 39.34 } &         39.62 &         39.74  \\
     MKTL        &         31.46  &         34.76  &         37.41  &         38.81  \\
     MULTIKT     &         29.86  &         32.86  &         35.22  &         36.33  \\
     MULTIpLE    &         37.80  &         38.81  &         39.80  &         40.47  \\
-    SMITLe        &        {37.83 } &         {39.31 } &         \textbf{40.37 } &         \textbf{41.09} \\
+    SMITLe        &        37.83  &         { 39.31 } &         \textbf{ 40.37 } &         \textbf{41.09} \\
         \midrule
     Batch       &         39.62  &         40.18  &         40.67  &         41.44  \\
     \bottomrule
@@ -87,7 +87,7 @@ In Figure \ref{fig:awa-b} we provide values of $\gamma$ and $\beta$ compared wit
 
 
 \subsection{Negative transfer: transferring from unrelated sources}
-In this section, we show how our method performs in transferring knowledge between two different datasets, from AwA dataset to Caltech dataset. Following the settings in previous experiment, the source models are trained from AwA dataset and applied to Caltech dataset. We iteratively select one category as the new one, running multiple times to get the average results for all the algorithms. We show the average performance of each algorithm in Table \ref{tab:A2C}. We can see that negative transfer does happen when transferring the knowledge from AwA to Caltech for all the algorithms except for ours. From the performance of Source+1, we can see that applying the source models directly leads to poor performance. We can conclude that even though these two datasets share some categories, the data distribution of the feature representation for the same category is not consistent. 
+In this section, we show how our method performs in transferring knowledge between two different datasets, from AwA dataset to Caltech dataset. Following the settings in previous experiment, the source models are trained from AwA dataset and transfered to Caltech dataset. We iteratively select one category as the new one, running multiple times to get the average results for all the algorithms. We show the average performance of each algorithm in Table \ref{tab:A2C}. We can see that negative transfer does happen when transferring the knowledge from AwA to Caltech for all the algorithms except for ours. From the performance of Source+1, we can see that applying the source models directly leads to poor performance. We can conclude that even though these two datasets share some categories, the data distribution of the feature representation for the same category is not consistent. 
 
 Still we take the experiment where horse is considered as the new category to see the detail performance of each algorithm and show the it in Figure \ref{fig:awa} . From here we can see that, not surprisingly, the accuracy of SMITLe shows similar accuracy to the no transfer baseline, while other methods suffer from negative transfer and perform even worse than no transfer baseline. In Figure \ref{fig:awa-b} we show the parameters learned for each classes in SMITLe in comparison with MULTIpLE. We can see that, when the prior knowledge is unrelated, SMITLe resists utilizing the prior knowledge and therefore shows almost identical accuracy to the no transfer baseline.
 %\begin{figure*}
@@ -112,12 +112,12 @@ Still we take the experiment where horse is considered as the new category to se
     \toprule
                 & 5              & 10             & 15             & 20             & 25             & 30 \\
     \midrule
-    No transfer &         \textbf{30.99 } &         33.97  &         35.95 &         37.78  &         38.27  &         39.39  \\
+    No transfer &         \textbf{ 30.99 } &         33.97  &         35.95 &         37.78  &         38.27  &         39.39  \\
     Source+1    &         17.89  &         18.69  &         18.79  &         19.69  &         19.39  &         20.20  \\
     MKTL        &         25.19  &         30.14  &         32.53  &         34.30  &         35.83  &         36.66  \\
     MULTIKT     &         27.60  &         32.19  &         34.51  &         36.78  &         37.79  &         39.27  \\
     MULTIpLE    &         29.79  &         33.45  &         35.49  &         36.77  &         37.43  &         38.62  \\
-    SMITLe        &       30.93  &         \textbf{34.13 } &         \textbf{36.09 } &         \textbf{38.01} &         \textbf{38.46} &         \textbf{39.59} \\
+    SMITLe        &       30.93  &         \textbf{ 34.13 } &         \textbf{  36.09 } &         \textbf{38.01} &         \textbf{38.46} &         \textbf{39.59} \\
     \bottomrule
     \end{tabular}%
   \label{tab:A2C}%

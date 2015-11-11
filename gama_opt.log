@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  10 NOV 2015 16:21
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  11 NOV 2015 15:46
 entering extended mode
 **gama_opt.tex
 (D:\LaTex_Files\Gama-Opt\gama_opt.tex
@@ -404,33 +404,27 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (D:\LaTex_Files\Gama-Opt\gama_intro.tex
-Underfull \hbox (badness 3138) in paragraph at lines 5--11
+Underfull \hbox (badness 3138) in paragraph at lines 5--8
 []\OT1/ptm/m/n/10 Transferring the knowl-edge be-tween dif-fer-ent im-age
  []
 
 <fig/negative.png, id=1, 353.06906pt x 268.75406pt>
 File: fig/negative.png Graphic file (type png)
  <use fig/negative.png>
-Package pdftex.def Info: fig/negative.png used on input line 14.
+Package pdftex.def Info: fig/negative.png used on input line 15.
 (pdftex.def)             Requested size: 176.53409pt x 134.3767pt.
 
 <fig/domain.jpg, id=2, 382.5492pt x 192.84045pt>
 File: fig/domain.jpg Graphic file (type jpg)
  <use fig/domain.jpg>
-Package pdftex.def Info: fig/domain.jpg used on input line 19.
+Package pdftex.def Info: fig/domain.jpg used on input line 20.
 (pdftex.def)             Requested size: 153.01695pt x 77.13481pt.
-
-Underfull \vbox (badness 1852) has occurred while \output is active []
-
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ])
-(D:\LaTex_Files\Gama-Opt\gama_works.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-) [2 <D:/LaTex_Files/Gama-Opt/fig/negative.png> <D:/LaTex_Files/Gama-Opt/fig/do
-main.jpg>]
+(D:\LaTex_Files\Gama-Opt\gama_works.tex) [2 <D:/LaTex_Files/Gama-Opt/fig/negati
+ve.png> <D:/LaTex_Files/Gama-Opt/fig/domain.jpg>]
 (D:\LaTex_Files\Gama-Opt\statement.tex [3]) (D:\LaTex_Files\Gama-Opt\smitle.tex
 
 Overfull \hbox (2.97462pt too wide) detected at line 42
@@ -442,8 +436,7 @@ Overfull \hbox (5.56476pt too wide) detected at line 52
 [] \OT1/cmr/m/n/10 = []
  []
 
-(D:\LaTex_Files\Gama-Opt\agl1.tex) (D:\LaTex_Files\Gama-Opt\theorem2.tex
-[4]
+(D:\LaTex_Files\Gama-Opt\agl1.tex) [4] (D:\LaTex_Files\Gama-Opt\theorem2.tex
 Underfull \hbox (badness 5756) in paragraph at lines 8--10
 \OT1/ptm/m/n/10 Let $\OT1/cmr/m/n/10 []$ \OT1/ptm/m/n/10 be the sub-gradient f
 or $\OML/cmm/m/it/10 J\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 )$ \
@@ -534,6 +527,7 @@ File: fig/A2C_gama-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: fig/A2C_gama-eps-converted-to.pdf used on input line 1
 02.
 (pdftex.def)             Requested size: 270.6062pt x 150.55983pt.
+ [7]
 Package epstopdf Info: Source file: <fig/A2A_bad/A2A_bad_3c_3.eps>
 (epstopdf)                    date: 2015-11-02 11:35:56
 (epstopdf)                    size: 11633 bytes
@@ -546,7 +540,7 @@ s-converted-to.pdf fig/A2A_bad/A2A_bad_3c_3.eps>
 (epstopdf)             \includegraphics on input line 137.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad_3c_3-eps-converted-to.pdf, id=46, 420.57124pt x 316.18124p
+<fig/A2A_bad/A2A_bad_3c_3-eps-converted-to.pdf, id=50, 420.57124pt x 316.18124p
 t>
 File: fig/A2A_bad/A2A_bad_3c_3-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/A2A_bad/A2A_bad_3c_3-eps-converted-to.pdf>
@@ -565,7 +559,7 @@ s-converted-to.pdf fig/A2A_bad/A2A_bad_3c_2.eps>
 (epstopdf)             \includegraphics on input line 138.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad_3c_2-eps-converted-to.pdf, id=47, 420.57124pt x 316.18124p
+<fig/A2A_bad/A2A_bad_3c_2-eps-converted-to.pdf, id=51, 420.57124pt x 316.18124p
 t>
 File: fig/A2A_bad/A2A_bad_3c_2-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/A2A_bad/A2A_bad_3c_2-eps-converted-to.pdf>
@@ -584,7 +578,7 @@ s-converted-to.pdf fig/A2A_bad/A2A_bad_3c_1.eps>
 (epstopdf)             \includegraphics on input line 139.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad_3c_1-eps-converted-to.pdf, id=48, 420.57124pt x 316.18124p
+<fig/A2A_bad/A2A_bad_3c_1-eps-converted-to.pdf, id=52, 420.57124pt x 316.18124p
 t>
 File: fig/A2A_bad/A2A_bad_3c_1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/A2A_bad/A2A_bad_3c_1-eps-converted-to.pdf>
@@ -603,7 +597,7 @@ s-converted-to.pdf fig/A2A_bad/A2A_bad_3c_4.eps>
 (epstopdf)             \includegraphics on input line 140.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad_3c_4-eps-converted-to.pdf, id=49, 420.57124pt x 316.18124p
+<fig/A2A_bad/A2A_bad_3c_4-eps-converted-to.pdf, id=53, 420.57124pt x 316.18124p
 t>
 File: fig/A2A_bad/A2A_bad_3c_4-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/A2A_bad/A2A_bad_3c_4-eps-converted-to.pdf>
@@ -622,7 +616,7 @@ s-converted-to.pdf fig/A2A_bad/A2A_bad_3c_5.eps>
 (epstopdf)             \includegraphics on input line 141.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad_3c_5-eps-converted-to.pdf, id=50, 420.57124pt x 316.18124p
+<fig/A2A_bad/A2A_bad_3c_5-eps-converted-to.pdf, id=54, 420.57124pt x 316.18124p
 t>
 File: fig/A2A_bad/A2A_bad_3c_5-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/A2A_bad/A2A_bad_3c_5-eps-converted-to.pdf>
@@ -641,7 +635,7 @@ s-converted-to.pdf fig/A2A_bad/A2A_bad_3c_6.eps>
 (epstopdf)             \includegraphics on input line 142.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad_3c_6-eps-converted-to.pdf, id=51, 420.57124pt x 316.18124p
+<fig/A2A_bad/A2A_bad_3c_6-eps-converted-to.pdf, id=55, 420.57124pt x 316.18124p
 t>
 File: fig/A2A_bad/A2A_bad_3c_6-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/A2A_bad/A2A_bad_3c_6-eps-converted-to.pdf>
@@ -660,7 +654,7 @@ s-converted-to.pdf fig/A2A_bad/A2A_bad_3c_7.eps>
 (epstopdf)             \includegraphics on input line 143.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad_3c_7-eps-converted-to.pdf, id=52, 420.57124pt x 316.18124p
+<fig/A2A_bad/A2A_bad_3c_7-eps-converted-to.pdf, id=56, 420.57124pt x 316.18124p
 t>
 File: fig/A2A_bad/A2A_bad_3c_7-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/A2A_bad/A2A_bad_3c_7-eps-converted-to.pdf>
@@ -679,7 +673,7 @@ s-converted-to.pdf fig/A2A_bad/A2A_bad_3c_8.eps>
 (epstopdf)             \includegraphics on input line 144.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad_3c_8-eps-converted-to.pdf, id=53, 420.57124pt x 316.18124p
+<fig/A2A_bad/A2A_bad_3c_8-eps-converted-to.pdf, id=57, 420.57124pt x 316.18124p
 t>
 File: fig/A2A_bad/A2A_bad_3c_8-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/A2A_bad/A2A_bad_3c_8-eps-converted-to.pdf>
@@ -698,7 +692,7 @@ s-converted-to.pdf fig/A2A_bad/A2A_bad_3c_9.eps>
 (epstopdf)             \includegraphics on input line 145.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad_3c_9-eps-converted-to.pdf, id=54, 420.57124pt x 316.18124p
+<fig/A2A_bad/A2A_bad_3c_9-eps-converted-to.pdf, id=58, 420.57124pt x 316.18124p
 t>
 File: fig/A2A_bad/A2A_bad_3c_9-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/A2A_bad/A2A_bad_3c_9-eps-converted-to.pdf>
@@ -717,7 +711,7 @@ ps-converted-to.pdf fig/A2A_bad/A2A_bad_3c_10.eps>
 (epstopdf)             \includegraphics on input line 146.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad_3c_10-eps-converted-to.pdf, id=55, 420.57124pt x 316.18124
+<fig/A2A_bad/A2A_bad_3c_10-eps-converted-to.pdf, id=59, 420.57124pt x 316.18124
 pt>
 File: fig/A2A_bad/A2A_bad_3c_10-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/A2A_bad/A2A_bad_3c_10-eps-converted-to.pdf>
@@ -736,7 +730,7 @@ nverted-to.pdf fig/A2A_bad/A2A_bad3.eps>
 (epstopdf)             \includegraphics on input line 151.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad3-eps-converted-to.pdf, id=56, 420.57124pt x 316.18124pt>
+<fig/A2A_bad/A2A_bad3-eps-converted-to.pdf, id=60, 420.57124pt x 316.18124pt>
 File: fig/A2A_bad/A2A_bad3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2A_bad/A2A_bad3-eps-converted-to.pdf>
@@ -755,7 +749,7 @@ nverted-to.pdf fig/A2A_bad/A2A_bad2.eps>
 (epstopdf)             \includegraphics on input line 152.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad2-eps-converted-to.pdf, id=57, 420.57124pt x 316.18124pt>
+<fig/A2A_bad/A2A_bad2-eps-converted-to.pdf, id=61, 420.57124pt x 316.18124pt>
 File: fig/A2A_bad/A2A_bad2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2A_bad/A2A_bad2-eps-converted-to.pdf>
@@ -774,7 +768,7 @@ nverted-to.pdf fig/A2A_bad/A2A_bad1.eps>
 (epstopdf)             \includegraphics on input line 153.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad1-eps-converted-to.pdf, id=58, 420.57124pt x 316.18124pt>
+<fig/A2A_bad/A2A_bad1-eps-converted-to.pdf, id=62, 420.57124pt x 316.18124pt>
 File: fig/A2A_bad/A2A_bad1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2A_bad/A2A_bad1-eps-converted-to.pdf>
@@ -793,7 +787,7 @@ nverted-to.pdf fig/A2A_bad/A2A_bad4.eps>
 (epstopdf)             \includegraphics on input line 154.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad4-eps-converted-to.pdf, id=59, 420.57124pt x 316.18124pt>
+<fig/A2A_bad/A2A_bad4-eps-converted-to.pdf, id=63, 420.57124pt x 316.18124pt>
 File: fig/A2A_bad/A2A_bad4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2A_bad/A2A_bad4-eps-converted-to.pdf>
@@ -812,7 +806,7 @@ nverted-to.pdf fig/A2A_bad/A2A_bad5.eps>
 (epstopdf)             \includegraphics on input line 155.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad5-eps-converted-to.pdf, id=60, 420.57124pt x 316.18124pt>
+<fig/A2A_bad/A2A_bad5-eps-converted-to.pdf, id=64, 420.57124pt x 316.18124pt>
 File: fig/A2A_bad/A2A_bad5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2A_bad/A2A_bad5-eps-converted-to.pdf>
@@ -831,7 +825,7 @@ nverted-to.pdf fig/A2A_bad/A2A_bad6.eps>
 (epstopdf)             \includegraphics on input line 156.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad6-eps-converted-to.pdf, id=61, 420.57124pt x 316.18124pt>
+<fig/A2A_bad/A2A_bad6-eps-converted-to.pdf, id=65, 420.57124pt x 316.18124pt>
 File: fig/A2A_bad/A2A_bad6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2A_bad/A2A_bad6-eps-converted-to.pdf>
@@ -850,7 +844,7 @@ nverted-to.pdf fig/A2A_bad/A2A_bad7.eps>
 (epstopdf)             \includegraphics on input line 157.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad7-eps-converted-to.pdf, id=62, 420.57124pt x 316.18124pt>
+<fig/A2A_bad/A2A_bad7-eps-converted-to.pdf, id=66, 420.57124pt x 316.18124pt>
 File: fig/A2A_bad/A2A_bad7-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2A_bad/A2A_bad7-eps-converted-to.pdf>
@@ -869,7 +863,7 @@ nverted-to.pdf fig/A2A_bad/A2A_bad8.eps>
 (epstopdf)             \includegraphics on input line 158.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad8-eps-converted-to.pdf, id=63, 420.57124pt x 316.18124pt>
+<fig/A2A_bad/A2A_bad8-eps-converted-to.pdf, id=67, 420.57124pt x 316.18124pt>
 File: fig/A2A_bad/A2A_bad8-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2A_bad/A2A_bad8-eps-converted-to.pdf>
@@ -888,7 +882,7 @@ nverted-to.pdf fig/A2A_bad/A2A_bad9.eps>
 (epstopdf)             \includegraphics on input line 159.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad9-eps-converted-to.pdf, id=64, 420.57124pt x 316.18124pt>
+<fig/A2A_bad/A2A_bad9-eps-converted-to.pdf, id=68, 420.57124pt x 316.18124pt>
 File: fig/A2A_bad/A2A_bad9-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2A_bad/A2A_bad9-eps-converted-to.pdf>
@@ -907,7 +901,7 @@ onverted-to.pdf fig/A2A_bad/A2A_bad10.eps>
 (epstopdf)             \includegraphics on input line 160.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/A2A_bad/A2A_bad10-eps-converted-to.pdf, id=65, 420.57124pt x 316.18124pt>
+<fig/A2A_bad/A2A_bad10-eps-converted-to.pdf, id=69, 420.57124pt x 316.18124pt>
 File: fig/A2A_bad/A2A_bad10-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/A2A_bad/A2A_bad10-eps-converted-to.pdf>
@@ -915,31 +909,31 @@ Package pdftex.def Info: fig/A2A_bad/A2A_bad10-eps-converted-to.pdf used on inp
 ut line 160.
 (pdftex.def)             Requested size: 94.3341pt x 70.9206pt.
 )
-(D:\LaTex_Files\Gama-Opt\gama_con.tex) [7] [8 <D:/LaTex_Files/Gama-Opt/fig/A2A_
-horse-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_gama-eps-converted
--to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2C_horse-eps-converted-to.pdf> <D:/LaTex
-_Files/Gama-Opt/fig/A2C_gama-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig
-/A2A_bad/A2A_bad_3c_3-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_ba
-d/A2A_bad_3c_2-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_b
-ad_3c_1-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad_3c_4
--eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad_3c_5-eps-co
-nverted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad_3c_6-eps-converted
--to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad_3c_7-eps-converted-to.pdf
-> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad_3c_8-eps-converted-to.pdf> <D:/L
-aTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad_3c_9-eps-converted-to.pdf> <D:/LaTex_Fi
-les/Gama-Opt/fig/A2A_bad/A2A_bad_3c_10-eps-converted-to.pdf>]
-(D:\LaTex_Files\Gama-Opt\gama_opt.bbl
-Underfull \vbox (badness 1205) has occurred while \output is active []
+(D:\LaTex_Files\Gama-Opt\gama_con.tex) (D:\LaTex_Files\Gama-Opt\gama_opt.bbl
+[8 <D:/LaTex_Files/Gama-Opt/fig/A2A_horse-eps-converted-to.pdf> <D:/LaTex_Files
+/Gama-Opt/fig/A2A_gama-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2C_h
+orse-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2C_gama-eps-converted-
+to.pdf>]
+Underfull \vbox (badness 2529) has occurred while \output is active []
 
- [9 <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad3-eps-converted-to.pdf> <D:/LaT
-ex_Files/Gama-Opt/fig/A2A_bad/A2A_bad2-eps-converted-to.pdf> <D:/LaTex_Files/Ga
-ma-Opt/fig/A2A_bad/A2A_bad1-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/
-A2A_bad/A2A_bad4-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A
-_bad5-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad6-eps-c
-onverted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad7-eps-converted-to
-.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad8-eps-converted-to.pdf> <D:/L
-aTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad9-eps-converted-to.pdf> <D:/LaTex_Files/
-Gama-Opt/fig/A2A_bad/A2A_bad10-eps-converted-to.pdf>])
+ [9 <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad_3c_3-eps-converted-to.pdf> <D:
+/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad_3c_2-eps-converted-to.pdf> <D:/LaTex_
+Files/Gama-Opt/fig/A2A_bad/A2A_bad_3c_1-eps-converted-to.pdf> <D:/LaTex_Files/G
+ama-Opt/fig/A2A_bad/A2A_bad_3c_4-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt
+/fig/A2A_bad/A2A_bad_3c_5-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2
+A_bad/A2A_bad_3c_6-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A
+2A_bad_3c_7-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad_
+3c_8-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad_3c_9-ep
+s-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad_3c_10-eps-conv
+erted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad3-eps-converted-to.pd
+f> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad2-eps-converted-to.pdf> <D:/LaTe
+x_Files/Gama-Opt/fig/A2A_bad/A2A_bad1-eps-converted-to.pdf> <D:/LaTex_Files/Gam
+a-Opt/fig/A2A_bad/A2A_bad4-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A
+2A_bad/A2A_bad5-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_
+bad6-eps-converted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad7-eps-co
+nverted-to.pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad8-eps-converted-to.
+pdf> <D:/LaTex_Files/Gama-Opt/fig/A2A_bad/A2A_bad9-eps-converted-to.pdf> <D:/La
+Tex_Files/Gama-Opt/fig/A2A_bad/A2A_bad10-eps-converted-to.pdf>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -961,7 +955,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  5015 strings out of 493921
  78159 string characters out of 3152883
- 247768 words of memory out of 3000000
+ 248768 words of memory out of 3000000
  8171 multiletter control sequences out of 15000+200000
  45438 words of font info for 90 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
@@ -981,7 +975,7 @@ mr7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX 2.9
 fonts/cm/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/MiKTeX 2
 .9/fonts/type1/urw/times/utmbi8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmr8
 a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on gama_opt.pdf (10 pages, 525634 bytes).
+Output written on gama_opt.pdf (10 pages, 525307 bytes).
 PDF statistics:
  224 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
